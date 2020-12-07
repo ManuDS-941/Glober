@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    
+    <div class="container"> 
+
+        
+        <h1 class="text-center mb-4 mt-4" >Back Office | Gestion des Pays <a href=" {{ path('admin') }} " class="btn btn-dark">Retour à l'Accueil</a></h1>         
+        
+        {% for message in app.flashes('success') %}
+        
+            <div class="bg-success text-white text-center col-md-4 mx-auto rounded p-3 mb-3">
+                {{ message }}
+            </div>
+    
+        {% endfor %}
+
+        <a class="float-right btn btn-dark mb-4" href=" {{ path('admin_pays_create') }} ">Ajouter</a>
+        
+        <table class="table table-striped table bordered table-dark table-hover text-center">
+            
+            <tr>
+                {% for data in colonnes %}
+                
+                <th>{{ data|upper }}</th>
+                
+                {% endfor %}
+                
+                <th>EDITER</th>
+                <th>SUPPRIMER</th>
+
+            </tr>
+
+            {% for data in pays %}
+                <tr>
+                    <td class="align-middle"> {{ data.id }} </td>
+                    <td class="align-middle"> {{ data.title }} </td>
+
+                    <td class="align-middle"><a href=" {{ path('admin_pays_edit', {'id': data.id}) }} " class="btn btn-success text-white"><i class="fas fa-edit fa-1x"></i></a></td>
+                    <td class="align-middle"><a href=" {{ path('admin_pays_delete', {'id': data.id}) }}" class="btn btn-danger text-white" onclick="return(confirm('Voulez vous vraiment supprimer cet ville ?'))"><i class="fas fa-trash fa-1x"></i></a></td>
+                </tr>
+            {% endfor %}
+            
+        </table>
+
+        
+    </div>
+
+
+{% endblock %}
