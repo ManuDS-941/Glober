@@ -25,7 +25,7 @@ class Ville
     private $title;
 
     /**
-     * @ORM\ManyToOne(targetEntity=pays::class, inversedBy="villes")
+     * @ORM\ManyToOne(targetEntity=Pays::class, inversedBy="villes")
      * @ORM\JoinColumn(nullable=false)
      */
     private $pays;
