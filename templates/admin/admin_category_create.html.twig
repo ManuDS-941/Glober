@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    
+    <div class="container"> 
+
+        
+        <h1 class="text-center mb-4 mt-4" >Back Office | Ajout d'une Catégorie<a class="text-right btn btn-dark ml-4" href=" {{ path('admin_category') }} ">Retour</a> </h1>         
+    
+        {{ form_start(formCategory, {'attr': {'class': 'col-md-5 mx-auto'}}) }}
+
+        
+        <div class="form-group">
+            {{ form_row(formCategory.title, {'label': "Nouvelle Catégorie :", 'attr': {'class': 'form-control'}} ) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_row(formCategory.ville, {'label': "Selectionner la Ville :", 'attr': {'class': 'form-control'}} ) }}
+        </div>
+
+        <button type="submit" class="btn btn-dark mt-4">
+            
+        {% if Bouton %}
+        
+        Modifier la Catégorie
+        
+        {% else %}
+        
+        Ajouter une Catégorie
+        
+        {% endif %}    
+        
+        </button>
+
+        {{ form_end(formCategory) }}  
+
+    </div>
+
+{% endblock %}

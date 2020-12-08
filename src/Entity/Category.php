@@ -25,7 +25,7 @@ class Category
     private $title;
 
     /**
-     * @ORM\ManyToOne(targetEntity=ville::class, inversedBy="categories")
+     * @ORM\ManyToOne(targetEntity=Ville::class, inversedBy="categories")
      */
     private $ville;
 
