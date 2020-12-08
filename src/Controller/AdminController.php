@@ -6,8 +6,11 @@ use App\Entity\Pays;
 use App\Entity\Ville;
 use App\Form\PaysType;
 use App\Form\VilleType;
+use App\Entity\Category;
+use App\Form\CategoryType;
 use App\Repository\PaysRepository;
 use App\Repository\VilleRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -164,7 +167,7 @@ class AdminController extends AbstractController
             $this->addFlash('success', "La ville a bien été ajouté !!");
 
             return $this->redirectToRoute('admin_ville', [
-                'id' => $ville->getId() // On transmet le nouvel ID de pays
+                'id' => $ville->getId() // On transmet le nouvel ID de ville
             ]);
         }
 
@@ -187,6 +190,91 @@ class AdminController extends AbstractController
         $this->addFlash('success', "La ville a bien été supprimée !!");
 
         return $this->redirectToRoute('admin_ville');
+    }
+
+    /**
+     * @Route("/admin/category", name="admin_category")
+     */
+    public function AdminCategory(EntityManagerInterface $manager, CategoryRepository $repo): Response
+    // EntityManagerInterface $manager : Agit sur la BDD et stock dans manager
+    // CategoryRepository $repo : Selectionne dans la BDD
+    {
+        $tableau = $manager->getClassMetadata(Category::class)->getFieldNames(); // Selectionne les métas données des catégories dans la Bdd 
+
+        dump($tableau);
+        
+        $category = $repo->findAll(); // Selectionne les villes de la BDD
+
+        dump($category);
+
+        return $this->render('admin/admin_category.html.twig', [
+            'tableau' => $tableau,
+            'category' => $category
+        ]);
+    }
+
+    /**
+     * @Route("/admin/category/create", name="admin_category_create")
+     * @Route("/admin/category/edit/{id}", name="admin_category_edit")
+     */
+    public function AdminFormCategory(Category $category = null, Request $request, EntityManagerInterface $manager): Response
+    // On rajoute = null car sinon symfony cherche a récupérer une categorie en BDD
+    // Request $request : récupère les données du formulaire dans la variable $request
+    // EntityManagerInterface : Sert a manipuler la BDD
+    {
+        if(!$category) // Si le catégorie selectionné n'est pas nul on fait alors une modification et on entre pas dans le IF
+        {
+            $category = new Category;
+        }
+        
+        dump($request); // On controle les valeurs saisie
+        dump($category); // On controle si category est bien null
+
+        $formCategory = $this->createForm(CategoryType::class, $category); // On créer le formulaire de CategoryType et on stock dans la variable $catégory
+
+        $formCategory->handleRequest($request); // Vérifie si tout les champs on été bien rempli et l'envoie dans le bon setter
+
+        dump($request); 
+
+        if($formCategory->isSubmitted() && $formCategory->isValid())
+        {
+            $manager->persist($category); // On maintient l'insertion en BDD dans la variable $category
+            $manager->flush(); // On execute
+
+            // if(!$ville->getId()) // A redevelopper
+            // {
+            //     $message = "La Categorie a bien été ajoutée";
+            // }
+            // else
+            // {
+            //     $message = "La Categorie a bien été modifiée";
+            // }
+
+            $this->addFlash('success', "La catégorie a bien été ajoutée !!");
+
+            return $this->redirectToRoute('admin_category', [
+                'id' => $category->getId() // On transmet le nouvel ID de category
+            ]);
+        }
+
+        return $this->render('admin/admin_category_create.html.twig', [
+            'formCategory' => $formCategory->createView(),
+            'Bouton' => $category->getId() // Active Bouton dès qu'il y a un ID dans categorie
+
+        ]);
+    }
+
+    /**
+     * @Route("/admin/category/delete/{id}", name="admin_category_delete")
+     */
+    public function AdminDeleteCategory(Category $category, EntityManagerInterface $manager)
+    {
+        $manager->remove($category); // Prépare pour garder en mémoire la requete Delete
+        $manager->flush(); // Execute
+
+        $this->addFlash('success', "La Catégorie a bien été supprimée !!");
+
+        return $this->redirectToRoute('admin_category');
     }
 
 

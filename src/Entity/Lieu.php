@@ -35,7 +35,7 @@ class Lieu
     private $adresse;
 
     /**
-     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="lieus")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="lieus")
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
