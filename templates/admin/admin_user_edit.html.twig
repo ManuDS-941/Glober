@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    
+    <div class="container"> 
+
+        
+        <h1 class="text-center mb-4 mt-4" >Back Office | Modification d'un Membre<a class="text-right btn btn-dark ml-4" href=" {{ path('admin_comment') }} ">Retour</a> </h1>         
+    
+        {{ form_start(formUser, {'attr': {'class': 'col-md-5 mx-auto m-4'}}) }}
+        
+
+        <div class="form-group">
+            {{ form_row(formUser.email, {'label': "Pseudo :", 'attr': {'class': 'form-control'}} ) }}
+        </div>
+
+        <div class="form-group">
+            
+            {{ form_row(formUser.username, {'attr': {'class': 'form-control'}, 'label': "Username :" }) }}
+        </div>                                   
+        
+        <div class="form-group">
+            {{ form_row(formUser.roles, {'attr': {'class': 'form-control'}} ) }}
+        </div>
+        
+        <div class="text-center">
+            <button type="submit" class="btn btn-dark mt-4 ">Modifier l'User</button>
+        </div>
+
+        {{ form_end(formUser) }}  
+
+    </div>
+
+{% endblock %}
