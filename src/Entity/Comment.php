@@ -28,7 +28,7 @@ class Comment
     private $commentaire;
 
     /**
-     * @ORM\ManyToOne(targetEntity=lieu::class, inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity=Lieu::class, inversedBy="comments")
      */
     private $lieu;
 
