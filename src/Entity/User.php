@@ -2,13 +2,20 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\UserRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(
+ *      fields = {"username"},
+ *      message="Ce nom d'utilisateur est déjà existant, veuillez en saisir un nouveau !"
+ * )
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -29,8 +36,23 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Assert\EqualTo(
+     *      propertyPath="confirm_password",
+     *      message="Les mots de passe ne correspondent pas",
+     *      groups={"registration"}
+     * )
      */
     private $password;
+
+    /**
+     * @Assert\EqualTo(
+     *      propertyPath="password",
+     *      message="Les mots de passe ne correspondent pas",
+     *      groups={"registration"}
+     * )
+     */
+    public $confirm_password;
 
     /**
      * @ORM\Column(type="json")
@@ -78,6 +100,13 @@ class User
         return $this;
     }
 
+    public function eraseCredentials() // Nettoie les mdp stockés éventuellement
+    {
+    }
+
+    public function getSalt() // Envoi la chaine de caractère non coder utiliser pour encoder
+    {
+    }
     public function getRoles(): ?array
     {
         return $this->roles;
