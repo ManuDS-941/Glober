@@ -6,19 +6,31 @@
 
 
 <div class="container">
-    <h1 class="display-4 text-center my-4">Découvrir Paris<h1>
+    <button type="button" class="btn btn-dark"><a href="{{ path('fr') }}">Retour</a></button>   {# {{ path('fr') }}" #}
+    
+    <div class="row titreVilleFr">
+
+        <div class="col-md-6 display-4 text-center my-4  text-start">
+
+            <h1> Découvrir {{ ville.title }} </h1>
+        </div>
+    </div>
 
 
 
-    <h2>titre</2>
+    <div class="text-center my-4">
+        {% for data in category %}
+            <button type="button" class="btn btn-primary text-center my-4"> {{ data.title }} </button>
+        {% endfor %}
+
+    </div>
+
+    <h2>Laissez-vous séduire !</h2></p>
     <p>Ville de l’amour, capitale de la mode, paradis littéraire… 
-    Paris compte de multiples visages. 
-    Si l’entrée des musées est parfois excessive et les bons restaurants se monnayent, la capitale française peut aussi s’avérer bon marché. 
-    Que vous ayez un gros faible pour les clochers ou une envie soudaine de côtoyer les habitués d’un authentique marché français, 
-    laissez-vous séduire !
+        <br>Paris compte de multiples visages. 
+        <br>Musées, restaurants, activité, ... 
+        <br>Venez côtoyer les habitués d’un authentique marché français, 
     </p>
-
-
 
 
 
