@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    
+    <div class="container"> 
+
+        
+        <h1 class="text-center mb-4 mt-4" >Back Office | Ajout d'un Commentaire<a class="text-right btn btn-dark ml-4" href=" {{ path('admin_comment') }} ">Retour</a> </h1>         
+    
+        {{ form_start(formComment, {'attr': {'class': 'col-md-5 mx-auto m-4'}}) }}
+
+        
+        <div class="form-group">
+            {{ form_row(formComment.pseudo, {'label': "Pseudo :", 'attr': {'class': 'form-control'}} ) }}
+        </div>
+
+        <div class="form-group">
+            
+            {{ form_row(formComment.commentaire, { 'attr': {'rows': 15}, 'attr': {'class': 'form-control'}, 'label': "Contenu du commentaire" }) }}
+        </div>                                   
+        
+        <div class="form-group">
+            {{ form_row(formComment.lieu, {'label': "Selectionner un Lieu :", 'attr': {'class': 'form-control'}} ) }}
+        </div>
+        
+        <div class="text-center">
+            <button type="submit" class="btn btn-dark mt-4 ">
+                
+            {% if Bouton %}
+            
+            Modifier le Commentaire
+            
+            {% else %}
+            
+            Ajouter un Commentaire
+            
+            {% endif %}    
+            
+            </button>
+        </div>
+
+        {{ form_end(formComment) }}  
+
+    </div>
+
+{% endblock %}

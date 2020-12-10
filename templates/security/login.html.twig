@@ -1,0 +1,65 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Mon Blog Symfony | Identifiez-vous {% endblock %}
+
+{% block body %}
+
+    <h1 class="display-4 text-center my-4">Identifiez-vous</h1> 
+
+    {# Si l'internaute a saisi les mauvais identifiants, alors on entre dans la condition IF #}
+    {# error : variable TWIG qui provient du controller SecurityController et qui contient un message d'erreur en cas de mauvaise connexion #}
+    {% if error %}
+
+    <p class="bg-danger text-white text-center p-3 col-md-4 mx-auto rounded">
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+        {# trans(error.messageData, 'security') : permet de pointer sur le fichier 'tranlsations/security.en.php' qui contient la personnalisation des messages utilisateurs par défault de Symfony #}
+    </p>
+        
+    {% endif %}
+    <form action="{{ path('security_login') }}" method="post" class="col-md-3 mx-auto">
+
+        <div class="from-group">
+            <label for="">E-Mail :</label>
+            <input type="text" class="form-control" id="_username" name="_username" value="{{ last_username }}">
+        </div>
+        {# on stock dans l'attribut 'value' le dernier mail saisi par l'internaute encas d'erreur d'authentification #}
+            {# last_username : variable qui provient du controller SecurityController #}
+
+        <div class="from-group">
+            <label for="">Mot de Passe :</label>
+            <input type="text" class="form-control" id="_password" name="_password">
+        </div>
+
+        <input type="submit" class="btn btn-dark mt-3" value="Connexion">
+    </form>
+    
+    <div class="text-center mt-4 mb-4">Pas de compte ? <a href="{{ path('security_registration') }}" class=""> Inscrivez-vous</a></div>
+    
+
+
+
+    <div class="text-center">
+        <p>
+            Admin :
+        </p>
+
+    <p>
+        pseudo : salah78@gmail.com mdp : salah
+    </p>
+    <p>        
+        pseudo : david78@gmail.com mdp : david
+    </p>
+    <p>
+        pseudo : catherine78@gmail.com mdp : catherine
+    </p>
+    <p>
+        User :
+    </p>
+    <p>
+        pseudo : test.@gmail.com mdp : test
+    </p>
+
+    </div>
+
+
+{% endblock %}
