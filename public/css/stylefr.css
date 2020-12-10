@@ -30,9 +30,7 @@ div .titreVilleFr
     background-image: url(../image/fr/image_titre.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 30vh;
-    width: 60vh;
-    margin-bottom: 30px;
-    padding: 0;
-    justify-content: center;
+    height: 50vh;
+    width: 80%;
+
 }

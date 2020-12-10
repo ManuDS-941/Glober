@@ -30,6 +30,7 @@ security:
             form_login:
                 login_path: security_login # on définit la route du formulaire de connexion
                 check_path: security_login # on définit la route ou les données de connexion vont être comparés
+                default_target_path: admin # renvoie automatiquement vers admin (grace a la fonction l'user lui sera refusé et renvoyer vers l'accueil)
 
             logout:
                 path: security_logout
