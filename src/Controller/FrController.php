@@ -26,7 +26,7 @@ class FrController extends AbstractController
         // Selectionne les villes dans la BDD
         $villesFr = $repo->findAll();
 
-        dump($villesFr);
+        // dump($villesFr);
 
         //Permet l'affichage
         return $this->render('fr/index_fr.html.twig', [
@@ -39,7 +39,7 @@ class FrController extends AbstractController
     /**
      * @Route("/fr/show_fr_ville/{id}", name="show_fr_ville")
      */
-    public function showVille(Ville $ville, CategoryRepository $repo, VilleRepository $repo2, EntityManagerInterface $manager): Response
+    public function showVille(Ville $ville, CategoryRepository $repo, EntityManagerInterface $manager): Response
     {
         // Selectionne les données de catégory dans la BDD
         $colonnes = $manager->getClassMetadata(Category::class)->getFieldNames();
