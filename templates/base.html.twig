@@ -14,8 +14,8 @@
             {# Lien vers fichier CSS #} {# asset(): fonction TWIG qui permet de générer une URL jusqu'au fichier style.css #}
             <link rel="stylesheet" href="{{ asset('css/styleind.css')}}">
             <link rel="stylesheet" href="{{ asset('css/stylefr.css')}}">
+            <link rel="stylesheet" href="{{ asset('css/stylees.css')}}">
             <link rel="stylesheet" href="{{ asset('css/styleaccueil.css')}}">
-
 
 
         {% endblock %}
@@ -26,24 +26,24 @@
         <nav>
 
             <input type="checkbox" id="nav" class="hidden">
-                  <label for="nav" class="nav-btn">
+                <label for="nav" class="nav-btn">
                         <i></i>
                         <i></i>
                         <i></i>
-                  </label>
-                  <div class="logo">
-                        <a href="#">Globe</a>
-                  </div>
-                  <div class="nav-wrapper">
+                </label>
+                <div class="logo">
+                        <a href="{{path('accueil')}}">Globe</a>
+                </div>
+                <div class="nav-wrapper">
                         <ul>
-                              <li><a href="{{path('fr')}}">France</a></li>
-                              <li><a href="{{path('es')}}">Espagne</a></li>
-                              <li><a href="{{path('pt')}}">Portugal</a></li>
-                              <li><a href="{{path('ind')}}">Inde</a></li>
-                              <li><a href="#">Roradmap</a></li>
-                              <li class="co"><a href="{{path('security_login')}}">Se connecter</a></li>
+                            <li><a href="{{path('fr')}}">France</a></li>
+                            <li><a href="{{path('es')}}">Espagne</a></li>
+                            <li><a href="{{path('pt')}}">Portugal</a></li>
+                            <li><a href="{{path('ind')}}">Inde</a></li>
+                            <li><a href="#">Roradmap</a></li>
+                            <li class="co"><a href="{{path('security_login')}}">Se connecter</a></li>
                         </ul>
-                  </div>
+                </div>
         </nav>
 
 

@@ -18,6 +18,8 @@ nav {
     height: 10vh;
     font-family: Poppins;
     font-weight: 400;
+    position: relative;
+    z-index: 1;
 
 }
 
@@ -30,7 +32,7 @@ nav {
 
 .co
 {
-    background-color: lightslategray;
+    border: lightblue solid 1px;
 
 }
 
@@ -235,7 +237,9 @@ body{
 }
 
 
- /* #earth_div{ top: 0; right: 0; bottom: 0; left: 0; position: absolute !important;} */
+
+
+ #earth_div{ top: 0; right: 0; bottom: 0; left: 0; position: absolute !important; z-index: 0;}
 
 /*--------------------------------end Body------------------------*/
 
@@ -255,7 +259,7 @@ body{
 
 
 
-  
+
 
 
 
