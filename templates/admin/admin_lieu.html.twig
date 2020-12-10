@@ -7,7 +7,7 @@
         
         <h1 class="text-center mb-4 mt-4" >Back Office | Gestion des Lieux <a href=" {{ path('admin') }} " class="btn btn-dark">Retour à l'Accueil</a></h1>         
         
-        {% for message in app.flashes('success') %} #}
+        {% for message in app.flashes('success') %} 
         
             <div class="bg-success text-white text-center col-md-4 mx-auto rounded p-3 mb-3">
                 {{ message }}
@@ -27,6 +27,7 @@
                 {% endfor %}
                 
                 <th>CATEGORIE</th>
+                <th>VILLE</th>
                 <th>EDITER</th>
                 <th>SUPPRIMER</th>
 
@@ -39,6 +40,7 @@
                     <td class="align-middle"> <img src="/image/{{data.image}}" alt="" style="width:150px; height:150px"></td>
                     <td class="align-middle"> {{ data.adresse }} </td>
                     <td class="align-middle"> {{ data.category.title }} </td>
+                    <td class="align-middle"> {{ data.ville.title }} </td>
 
                     
 
