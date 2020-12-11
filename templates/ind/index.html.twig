@@ -11,12 +11,12 @@
     <div class="top">
  
     
-{# <div class="h"><h1 class="text-center head"><span class="orange">Incre</span>dible <span class="green">!ndia</span></h1></div> #}
+ <div class="h"><h1 class=" head"><span class="orange">Incre</span>dible <span class="green">!ndia</span></h1></div> 
   
       
       </div>
 
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navb">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,26 +30,22 @@
                     
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                        
-                        <a class="dropdown-item" href="{{ path('pondy') }}"> Pondicherry </a>
+                         {% for data in ville %}
+                        <a class="dropdown-item" href="{{ path('pondy', {'id': data.id }) }}"> {{ data.title }} </a>
+                        {% endfor %}
                        
                     </div>
-                </li>
+                {# </li>
                 <div class="h"><h1 class="inc"><span class="orange">Incre</span>dible <span class="green">!ndia</span></h1></div>
-            </ul>
+            </ul> #}
             
         </div>
     </nav>
      
-<div class="div taj">
+<div class="taj">
 
-  {# <label for="cars" class="text-white">Choose a CITY:</label>
-  <select>
-   <option value="">--Select a city--</option>
-    <option value="pondy"><a href="{{ path('pondy') }}"> Pondicherry</a></option>
-    <option value="madurai">Madurai</option>
-    <option value="chennai">Chennai</option>
-    
-  </select> #}
+ <img class="bd-placeholder-img" width="100%" height="100%" src="../image/ind/taj.jpeg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+
 </div>
 
  <div class="container marketing" id="contain">
@@ -57,19 +53,21 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-       <img src="../image/flag.svg" alt="" class="round">
+     
+       <img src="../image/ind/flag.svg" alt="" class="round">
+       
         <h2>FLAG</h2>
         <p>The National flag of India is a horizontal tricolor of deep saffron (kesari) at the top, white in the middle and dark green at the bottom in equal proportion. The ratio of width of the flag to its length is two to three. In the centre of the white band is a navy blue wheel which represents the chakra.</p>
         
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-       <img src="../image/tiger.jpg" alt="" class="round">
+       <img src="../image/ind/tiger.jpg" alt="" class="round">
         <h2>NATIONAL ANIMAL</h2>
         <p>The magnificent tiger, Panthera tigris is a striped animal. It has a thick yellow coat of fur with dark stripes. The combination of grace, strength, agility and enormous power has earned the tiger its pride of place as the national animal of India.</p>
         
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img src="../image/peacock.webp" alt="" class="round">
+        <img src="../image/ind/peacock.webp" alt="" class="round">
         <h2>NATIONAL BIRD</h2>
         <p>The Indian peacock, Pavo cristatus, the National Bird of India, is a colourful, swan-sized bird, with a fan-shaped crest of feathers, a white patch under the eye and a long, slender neck.</p>
        
@@ -87,7 +85,7 @@
         <p class="lead">India (Hindi: Bhārat), officially the Republic of India (Hindi: Bhārat Gaṇarājya),[23] is a country in South Asia. It is the second-most populous country, the seventh-largest country by land area, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west;[f] China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives; its Andaman and Nicobar Islands share a maritime border with Thailand and Indonesia.</p>
       </div>
       <div class="col-md-5">
-       <img src="../image/history.jpeg" alt="" >
+       <img src="../image/ind/history.jpeg" alt="" >
       </div>
     </div>
 
@@ -95,7 +93,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-       <img src="../image/culture.jpg" alt="" >
+       <img src="../image/ind/culture.jpg" alt="" >
         </div>
       <div class="col-md-5">
       <h2 class="featurette-heading">CULTURE</h2>
@@ -111,7 +109,7 @@
         <p class="lead">Many Indian dishes are cooked in vegetable oil, but peanut oil is popular in northern and western India, mustard oil in eastern India, and coconut oil along the western coast, especially in Kerala and parts of southern Tamil Nadu. Gingelly (sesame) oil is common in the south since it imparts a fragrant, nutty aroma. In recent decades, sunflower, safflower, cottonseed, and soybean oils have become popular across India. Hydrogenated vegetable oil, known as Vanaspati ghee, is another popular cooking medium. Butter-based ghee, or deshi ghee, is used frequently, though less than in the past.[citation needed] Many types of meat are used for Indian cooking, but chicken and mutton tend to be the most commonly consumed meats. Fish and beef consumption are prevalent in some parts of India, but they are not widely consumed except for coastal areas, as well as the north east.[</p>
       </div>
       <div class="col-md-5">
-         <img src="../image/food.jpg" alt="" >
+         <img src="../image/ind/food.jpg" alt="" >
       </div>
     </div>
 

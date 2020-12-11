@@ -13,12 +13,15 @@
 </style>
 
 
-<section><img src="../image/white.jpg" alt="" class="whitetown"></section>
+<section><img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('image/ind/white.jpg') }}" id="whitetown" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+</section>
 
 {# <h1 class="pondy text-center">Pondicherry</h1>  #}
 <a href="{{ path('ind') }}"><button type="button" class="btn btn-info">BACK</button></a>
 
-<h1 class=" text-center">Place To Visit</h1>
+ <h1 class=" text-center font-italic">{{ville.category.title}} {{ville.title}}</h1>  
+
+
 <div class="album py-5 bg-light">
 
     <div class="container">
@@ -28,7 +31,7 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-           <img src="../image/auro.jpg" alt="" class="auro">
+           <img src="{{ asset('image/ind/auro.jpg') }}" alt="" class="auro">
             <div class="card-body">
               <p class="card-text">Auroville is an experimental township in Viluppuram district mostly in the state of Tamil Nadu, India with some parts in the Union Territory of Puducherry in India. It was founded in 1968 by Mirra Alfassa and designed by architect Roger Anger.</p>
               <div class="d-flex justify-content-between align-items-center">
@@ -42,7 +45,7 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <img src="../image/Ashram.jpg" alt="" class="auro">
+            <img src="{{ asset('image/ind/Ashram.jpg') }}" alt="" class="auro">
             <div class="card-body">
               <p class="card-text">The ashram grew out of a small community of disciples located in pondicherrt who had gathered around Sri Aurobindo after he retired from politics and settled in Pondicherry in 1910.</p>
               <div class="d-flex justify-content-between align-items-center">
@@ -56,7 +59,7 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-             <img src="../image/beach.jpg" alt="" class="auro">
+             <img src="{{ asset('image/ind/beach.jpg') }}" alt="" class="auro">
             <div class="card-body">
               <p class="card-text">Rock Beach is the popular in the city of Puducherry. It is a 1.2-kilometre-long stretch in Pondicherry, starts from War Memorial and end at Dupleix Park on the Goubert Avenue. </p>
               <div class="d-flex justify-content-between align-items-center">
@@ -71,7 +74,7 @@
         </div>
          <div class="col">
           <div class="card shadow-sm">
-            <img src="../image/park.jpg" alt="" class="auro">
+            <img src="{{ asset('image/ind/park.jpg') }}" alt="" class="auro">
             <div class="card-body">
               <p class="card-text">The Government Park or Bharati Park is in the green centre of the French Town and its lush trees provide ample relief from the scorching sun on a hot summer day. With children playing in the ponds, on the hill or in the traffic park, grown-ups sitting or lying on granite benches, families on a picnic and occasional sit-ins of striking citizens, the park is the most appreciated public area in the town. </p>
               <div class="d-flex justify-content-between align-items-center">
@@ -86,7 +89,7 @@
 
         <div class="col">
           <div class="card shadow-sm">
-            <img src="../image/temple.jpg" alt="" class="auro">
+            <img src="{{ asset('image/ind/temple.jpg') }}" alt="" class="auro">
             <div class="card-body">
               <p class="card-text">Manakula Vinayagar Temple is a Hindu temple in the Union Territory of Puducherry, India. Dedicated to the god Ganesa, it is a popular pilgrimage site and tourist destination in Puducherry. The temple is of considerable antiquity and predates French occupation of the territory.</p>
               <div class="d-flex justify-content-between align-items-center">
@@ -103,7 +106,7 @@
 
    <div class="rest">
 
-   <h1 class="text-center">Restaurants</h1>
+   <h1 class="text-center font-italic">{{category.title}} {{ville.title}}</h1>
     
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
@@ -118,7 +121,7 @@
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
       <div class="view">
-        <img class="d-block w-100" src="../image/villas.jpg" alt="First slide">
+        <img class="d-block w-100" src="{{ asset('image/ind/villas.jpg') }}" alt="First slide">
         <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
@@ -129,7 +132,7 @@
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100" src="../image/helena.webp" alt="Second slide">
+        <img class="d-block w-100" src="{{ asset('image/ind/helena.webp') }}" alt="Second slide">
         <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
@@ -140,7 +143,7 @@
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100" src="../image/sky.jpg" alt="Third slide">
+        <img class="d-block w-100" src="{{ asset('image/ind/sky.jpg') }}" alt="Third slide">
         <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
