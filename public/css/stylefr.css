@@ -1,29 +1,21 @@
-/*******************   ******************************************/
-
-div .banniere
-{
-    background-image: url(../image/fr/paris_banniere.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-    margin-bottom: 30px;
-}
-
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
-
+/*********************************************************************************************/
+/************  show_fr_ville.html.twig  ***************************************************/
+/*********************************************************************************************/
 @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-    font-size: 3.5rem;
+    .carousel-multi-item-2 .col-md-3 {
+        float: left;
+        width: 25%;
+        max-width: 100%; 
+    }
+    .carousel-multi-item-2 .card img {
+        border-radius: 2px; 
     }
 }
 
-/************  ***************************************************/
+
+/*********************************************************************************************/
+/************  show_fr_category.html.twig  ***************************************************/
+/*********************************************************************************************/
 
 div .titreVilleFr
 {
@@ -31,6 +23,5 @@ div .titreVilleFr
     background-size: cover;
     background-repeat: no-repeat;
     height: 50vh;
-    width: 80%;
-
+    background-color: brown;
 }
