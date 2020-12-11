@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{# {% block title %}Découvrir {{ category.title }}! {% endblock %} #}
+
+{% block body %}
+
+
+<div class="container">
+
+    <button type="button" class="btn btn-dark"><a href="{{ path('pt') }}">Retour</a></button>
+
+    <div class="row-12 p-0 m-2">
+
+        <div class="col-md-12 display-4 text-center my-4 text-start">
+
+            {# <h1> Découvrir {{ category.title }} </h1> #}
+        </div>
+    </div>
+
+    <div class="row mb-4">
+    {# {% for data in category %}
+    
+        {% for data in data %}
+
+            {{ data.title }}
+            
+        {% endfor %} #}
+
+        {# <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/image/{{ data.image }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ data.title}} </h5>
+                    <p class="card-text">{{ data.adresse }}</p>
+
+                    <a href="#" class="btn btn-primary">Voir plus</a>
+                </div>
+            </div>
+        </div> #}
+
+    {# {% endfor %} #}
+    </div>
+
+    
+
+    {# <div class="text-center my-4">
+        {% for data in category %}
+            <button type="button" class="btn btn-primary text-center my-4"> {{ data.title }} </button>
+        {% endfor %} 
+
+    </div>#}
+
+    {# <div class="text-center">
+        <h2>Laissez-vous séduire !</h2>
+        </p>
+        <p>Ville de l’amour, capitale de la mode, paradis littéraire…
+            <br>Paris compte de multiples visages.
+            <br>Musées, restaurants, activité, ...
+            <br>Venez côtoyer les habitués d’un authentique marché français,
+        </p>
+    </div> #}
+
+
+</div>
+{% endblock %}
