@@ -4,213 +4,277 @@
 
 {% block body %}
 
-
-
-    <h1 class="display-4 text-center my-4">Découvrir le Portugal<h1></h1>
-
-    <!-- NavBar selection villes pt -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Choisir une ville
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {% for data in ville %}
-                        <a class="dropdown-item" href="{{ path('show_fr_ville', {'id': data.id }) }}"> {{ data.title }} </a>
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
-    </nav>
-
-
-    <!-- <div class="row banniere">   
-    </div>  -->
-
-
-
-
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="../image/pt/ponte25abril.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" style="height: 600px;"><rect width="100%" height="10%" fill="#777"/>
-
-                <div class="container">
-                    <div class="carousel-caption text-start">
-                        <!-- <h1>titre.</h1>
-                        <p>  texte.</p>  -->
-                        {# <p><a class="btn btn-lg btn-primary" href="#" role="button">A Revoir</a></p> #}
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="../image/pt/VascoGama.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
-                
-                <div class="container">
-                    <div class="carousel-caption">
-                        <!-- <h1>titre 2.</h1>
-                        <p>texte 2.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>  -->
-                    </div>
-                </div>
-            </div>
-
-        <div class="carousel-item">
-            <img class="bd-placeholder-img" width="100%" height="100%" src="../image/fr/fr_festivalCarcassonne.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
-
-            <div class="container">
-                <div class="carousel-caption text-end">
-                    <!-- <h1>titre 3.</h1>
-                    <p>texte 2.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
-                </div>
-            </div>
-        </div>
-    </div>
-        {# <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <!-- <span class="visually-hidden">texte</span> -->
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <!-- <span class="visually-hidden">texte</span> -->
-        </a> #}
+<div class="container-fluid">
     
+    <h1 class="display-4 text-center my-4"> Bienvenue au <br><span class="text-success">PO</span><span class="text-warning">R</span><span class="text-danger">TUGAL</span> </h1>
+</div>
 
-    <br>
+<div class="container-fluid">
 
-
-
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row justify-content-around">
-        <div class="col-lg-3 text-center">
-            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="../image/pt/drapeaupt.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
-
-            <h2>Drapeau</h2>
-            <p>Le drapeau du Portugal (en portugais bandeira de Portugal) est actuellement de couleurs verte et rouge sur la séparation desquelles se trouvent une sphère armillaire et les armoiries du pays. Le drapeau actuel est le drapeau républicain qui a succédé en 1911 à l'ancien drapeau bleu et blanc. C'est un des nombreux drapeaux au dessin décentré vers la hampe.</p>
-            <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-3 text-center">
-            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="../image/pt/ptsatellite.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+        <!-- NavBar selection villes pt -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
             
-            <h2>Description</h2>
-            <p>Le Portugal est un pays du sud de l'Europe, sur la péninsule Ibérique, délimité en partie par l'Espagne. Sa situation au bord de l'océan Atlantique a influencé de nombreux aspects de sa culture : la morue salée et les sardines grillées sont des plats nationaux, les plages de l'Algarve sont très prisées et une grande partie de l'architecture du pays date des années 1500 aux années 1800, période pendant laquelle le Portugal était un empire maritime puissant.</p>
-            <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>  -->
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-3 text-center">
-            <img class="bd-placeholder-img rounded-circle" width="160" height="140" src="../image/fr/fr_coq.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Choisir une ville
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for data in ville %}
+                            <a class="dropdown-item" href="{{ path('villept', {'id': data.id }) }}">
+                                {{ data.title }} </a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                </ul>
 
-            <h2>Emblème</h2>
-            <p>Le Coq était le symbole de la Gaulle et des Gaullois, il est devenu celui de la République.</p>
-            <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>  -->
-        </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-    <hr class="w-75">
-
-    <div class="row ml-5 mr-5">
-        <h2>Histoire :</h2>
-        <p>L'histoire du Portugal au sens strict ne commence qu'au xiie siècle avec la naissance des premiers états portugais : les comtés de Portucale et de Coimbra au temps d'Henri de Bourgogne, mais au sens large, elle comprend le passé de l'actuel territoire portugais et de l'Ouest de la péninsule Ibérique depuis la préhistoire.</p>  
-        <p>Si les fortes identités culturelles des Basques méridionaux, de la majeure partie des Catalans (Rosselló excepté) et des Galiciens ne les ont pas empêchés de rejoindre le royaume de Castille pour former l'Espagne moderne, le Sud-Ouest de la péninsule ibérique en revanche, a formé une autre unité politique, délimitée par la plus ancienne frontière d'Europe. La vocation maritime du pays portugais s'est affirmée malgré un littoral peu propice à la grande navigation et une situation géographique qui l'éloigne, encore aujourd'hui, des grands axes européens.</p>
-    </div>
-
-    <hr class="w-75">
-
-    <div class="row mb-4 ml-5 mr-5">
-        <div class="col-md-3">
-            <img src="../image/pt/fronteira.jpg" style="width: 300px; height: 325px; margin-top: 10px" alt="">
-        </div>
-        <div class="col-md-9">
-            <h2>La langue portugaise</h2>
-            <p>La langue officielle de la République portugaise est le portugais, avec plus de 240 millions de personnes qui la parlent dans le monde entier en 2008. C'est alors la sixième langue la plus parlée au monde et la troisième langue européenne la plus parlée dans le monde. Elle est officielle au Portugal, au Brésil, en Angola, au Cap-Vert, en Guinée-Bissau, à Macao, au Mozambique, à Sao Tomé-et-Principe et au Timor oriental, mais elle est aussi parlée dans l'ancienne Inde portugaise (Goa, Daman et Diu et Dadra et Nagar Haveli) et dans certains territoires contestés (comme Olivença, en Espagne) ou limitrophes de pays lusophones (comme l'Uruguay avec le Brésil).</p>
-            <p>Le portugais possède aussi un statut officiel dans l'Union européenne, dans l'Union des nations sud-américaines, dans l'Union latine, dans le Mercosur, dans la Communauté de développement d'Afrique australe et dans l'Union africaine. Le portugais est parfois désigné comme la « langue de Camões » (Luís de Camões, auteur de Os Lusíadas).</p>
-            <p>Le Portugal apparaît homogène sur le plan linguistique, car 96 % des habitants ont comme langue maternelle le portugais ; mais il en existe aussi plusieurs variétés dialectales, notamment l'açorien, l'algarvio, l'alentejano, le Minhoto, le beirão, le madérien, le dialecte de la Beira Alta et du Mondego, le dialecte de Castelo Branco et de Portalegre et enfin le dialecte de Trás-os-Montes.</p>
-        </div>    
-    </div>
+                <!-- Fonction Recherche -->
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </nav>
 
 
-    <hr class="w-75">
+        <!--  DEBUT CAROUSEL -->
 
-    <div class="row mb-4 ml-5 mr-5">
-        <div class="col-md-8 ml-10">
-            <h2>L'Agriculture</h2>
-            <p>Avec un passé majoritairement agricole, et après les évolutions de ces dernières années, l'économie est fondée actuellement sur les services et sur l'industrie, qui représentent respectivement 67,8 % et 28,2 % du secteur économique portugais. L'agriculture portugaise bénéficie d'un climat et d'un relief favorables et de sols fertiles. Les dernières décennies ont permis d'intensifier la modernisation de l'agriculture et de la pêche, bien qu'encore 13 % de la population active y travaille toujours. Les oliviers (qui s'étendent sur 4 000 km2), les vignobles (qui occupent 3 750 km2), le blé (sur 3 000 km2) et le maïs (qui représentent 2 680 km2) sont les principales cultures par la surface cultivée.</p>
-            <p>Les vins (les plus célèbres étant le vin de Porto, le vin de Madère et le vinho verde) et les huiles portugaises sont appréciés grâce à leur qualité. Le Portugal est également un pays producteur de fruits, notamment les oranges algarviennes, la pêra-rocha de l'Ouest, la cerise du Gardunha et la banane de Madère. Il existe aussi d'autres productions comme l'horticulture, la fromagerie et la floriculture, comme la betterave rouge, le fromage da Serra, l'huile de tournesol et le tabac. Le Portugal produit 52,5 % de la production mondiale de liège, des eucalyptus, du vin, du cuivre… C'est aussi un important importateur de produits alimentaires. Les importations proviennent de l'Union européenne à 76 %, 4 % de l'Amérique du Nord et 1 % des pays lusophones. Le secteur primaire (agriculture) représente 2,8 %, du PIB portugais, le secteur secondaire (industrie) 24,8 % et le secteur tertiaire (services) 72,4 %.</p>
+        <div id="carouselExampleIndicators" class="carousel slide" data-interval="4000" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="../image/pt/VascoGama.jpg" style="height: 600px;">
+                    <rect width="100%" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./image/pt/ponte25abrilcover.jpg" style="height: 600px;">
+                    <rect width="100%" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./image/pt/ponte25abril.jpg" style="height: 600px;">
+                    <rect width="100%" alt="Third slide">
+                </div>
+            </div>
             
         </div>
-        <div class="col-md-4">
-            <img src="../image/pt/vinporto.jpg" alt="porto" style="width: 350px; height: 370px; margin-top: 30px; margin-left: 20px;">
+
+        <!-- FIN  CAROUSEL -->
+
+</div>
+<div class="container-fluid">
+
+        <br>
+
+        <div class="row justify-content-around">
+            <div class="col-lg-3 text-center">
+                <img class="bd-placeholder-img rounded-circle mb-2" width="140" height="140"
+                    src="../image/pt/drapeaupt.jpg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+
+                <h2>Drapeau</h2>
+                <p>Le drapeau du Portugal (en portugais bandeira de Portugal) est actuellement de couleurs verte et
+                    rouge sur la séparation desquelles se trouvent une sphère armillaire et les armoiries du pays. Le
+                    drapeau actuel est le drapeau républicain qui a succédé en 1911 à l'ancien drapeau bleu et blanc.
+                    C'est un des nombreux drapeaux au dessin décentré vers la hampe.</p>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <img class="bd-placeholder-img rounded-circle mb-2" width="140" height="140"
+                    src="../image/pt/ptsatellite.jpg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+
+                <h2>Description</h2>
+                <p>Le Portugal est un pays du sud de l'Europe, sur la péninsule Ibérique, délimité en partie par
+                    l'Espagne. Sa situation au bord de l'océan Atlantique a influencé de nombreux aspects de sa culture
+                    : la morue salée et les sardines grillées sont des plats nationaux, les plages de l'Algarve sont
+                    très prisées et une grande partie de l'architecture du pays date des années 1500 aux années 1800,
+                    période pendant laquelle le Portugal était un empire maritime puissant.</p>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <img class="bd-placeholder-img rounded-circle mb-2" width="160" height="140" src="../image/pt/galo.jpg"
+                    role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+
+                <h2>Symbole</h2>
+                <p>Une légende est passée de génération en génération et le typique et bien connu « coq de Barcelos »,
+                    ou « galo de Barcelos » en portugais, est devenu ainsi un des symboles du Portugal. Il est symbole
+                    de foi, de justice et de bonne chance. Cette légende rappelle celle du miracle du pendu-dépendu,
+                    attachée au pèlerinage de Saint-Jacques-de-Compostelle.</p>
+
+            </div>
+
         </div>
-    </div>
 
-    <hr class="w-75">
+        <hr class="w-75">
 
-    <div class="row mb-4 ml-5 mr-5">
-        <div class="col-md-4 m-0 p-0" >
-            <img src="../image/pt/rancho.jpg" alt="Musique" style="width: 450px; height: 350px; margin-top: 10px; margin-right: 40px;">
-        </div>  
-        <div class="col-md-7">
-            <h2>La musique</h2>
-            <p>La musique traditionnelle portugaise est variée et très riche. Du folklore avec les danses du vira (région du Minho), du pauliteiros de Miranda (région Mirandaise), du corridinho de l'Algarve ou encore du bailinho de Madère. Les instruments typiques sont le cavaquinho, la cornemuse, l'accordéon, le violon, les tambours, la guitare portugaise (instrument caractéristique du fado) et toute une variété d'instruments à vent et de percussion. Dans la culture populaire existent encore les groupes philharmoniques qui représentent chaque localité et jouent des styles de musique différents, du populaire au classique.</p>
-            <p>Le style de musique portugais le plus connu est le fado, dont l'interprète la plus célèbre fut Amália Rodrigues. D'autres chanteurs comme Alfredo Duarte Marceneiro, Vicente da Câmara, Nuno da Câmara Pereira, Frei Hermano da Câmara, António Pinto Basto et Hermínia Silva se sont distingués en tant que fadistes. Ces dernières années, le fado a vu apparaître de jeunes chanteurs qui ont connu un grand succès, comme Camané, Mariza, Ana Moura, Mafalda Arnauth et Mísia entre autres, ainsi que de jeunes guitaristes comme Bernardo Couto.</p>
-        </div>  
-    </div>
-
-    <hr class="w-75">
-
-    <div class="row mb-4 ml-5 mr-5">
-        <div class="col-md-7">
-            <h2>Le Sport</h2>
-            <p>Le football est le sport le plus connu, aimé et pratiqué au Portugal. Eusébio est un grand symbole du football portugais et les plus récents phénomènes de popularité sont Cristiano Ronaldo, Luís Figo, Rui Costa, João Vieira Pinto et Pedro Miguel Pauleta, qui font partie des nombreux footballeurs de réputation mondiale nés au Portugal.</p>
-            <p>Le Sporting, Porto et Benfica sont les trois plus grands clubs de sport par leur popularité et le nombre de trophées gagnés. Ils ont gagné 12 titres européens, ils étaient présents dans beaucoup de finales et ont été les compétiteurs réguliers aux dernières étapes de presque chaque saison.</p>
-            <p>La « Seleção » a terminé finaliste de l'Euro 2004 à domicile, le Portugal étant le pays hôte du tournoi européen de football cette année-là189. L'équipe a perdu cette année-là en finale 0-1 face à la Grèce. L'équipe a également réussi à atteindre la troisième place lors de la Coupe du monde de football de 1966 et atteint la quatrième place de la Coupe du monde de football de 2006. Le Portugal remporte son premier titre majeur lors de l'Euro 2016 face à la France, le pays hôte, grâce à un but de l'attaquant Eder lors des prolongations.</p>
-            
-        </div>    
-
-        <div class="col-md-4 m-0 p-0" >
-            <img src="../image/pt/luz.jpg" alt="sport" style="height: 370px; width: 550px; margin-top: 10px;">
-        </div>
-    </div> 
-
-    <hr class="w-75">
-
-    <div class="row mb-4 mt-5 ml-5">
-        <div class="col-md-3" >
-            <img src="../image/pt/cuisportugal.jpg" alt="produits régionaux" style="height: 380px; width: 250px; margin-top: 15px;">
+        <div class="row ml-5 mr-5">
+            <h2 class="mx-auto">Histoire</h2>
+            <p>L'histoire du Portugal au sens strict ne commence qu'au XIIe siècle avec la naissance des premiers états
+                portugais : les comtés de Portucale et de Coimbra au temps d'Henri de Bourgogne, mais au sens large,
+                elle comprend le passé de l'actuel territoire portugais et de l'Ouest de la péninsule Ibérique depuis la
+                préhistoire.</p>
+            <p>Si les fortes identités culturelles des Basques méridionaux, de la majeure partie des Catalans (Rosselló
+                excepté) et des Galiciens ne les ont pas empêchés de rejoindre le royaume de Castille pour former
+                l'Espagne moderne, le Sud-Ouest de la péninsule ibérique en revanche, a formé une autre unité politique,
+                délimitée par la plus ancienne frontière d'Europe. La vocation maritime du pays portugais s'est affirmée
+                malgré un littoral peu propice à la grande navigation et une situation géographique qui l'éloigne,
+                encore aujourd'hui, des grands axes européens.</p>
         </div>
 
-        <div class="col-md-8">
-            <h2>La gastronomie</h2>
-            <p>Chaque région du Portugal possède ses spécialités culinaires spécifiques, s'inspirant souvent des produits locaux. Les aliments de base dans cette cuisine sont la viande (de mouton, de porc et de volaille), diverses espèces de poissons et de coquillages (grande variété d'assiettes de morue — il existe 365 variantes de recettes pour la morue182)183. La caldeirada (une sorte de bouillabaisse) est un plat typique de la municipalité de Peniche184 : il est composé de poissons, patate, oignons, tomates et de piments. Les fromages les plus populaires sont le fromage da Serra da Estrela et le fromage de Azeitão185. Bien sûr, il y a d'autres fromages populaires portugais sous l'appellation d'origine protégée.</p>
+        <hr class="w-75">
 
-            <p>Le Portugal est un pays fortement vinicole, les vins les plus célèbres sont les vins du Douro, de l'Alentejo et du Dão, les vins verts du Minho, et les liquoreux de Porto, Lourinhã et Madère. Dans les pâtisseries il existe une liste énorme de variétés de recettes traditionnelles, les plus célèbres étant les pastéis de nata (le secret de la recette est toujours bien gardé), les ovos moles d'Aveiro, les pastéis de Tentúgal, le pão-de-ló, et encore beaucoup d'autres.</p>
+        <div class="row mb-4 justify-content-between">
+            <div class="col-md-3 text-center">
+                <img src="../image/pt/fronteira.jpg" style="width: 80%; height: 325px; margin-top: 10px" alt="">
+            </div>
+            <div class="col-md-9">
+                <h2>La langue portugaise</h2>
+                <p>La langue officielle de la République portugaise est le portugais, avec plus de 240 millions de
+                    personnes qui la parlent dans le monde entier en 2008. C'est alors la sixième langue la plus parlée
+                    au monde et la troisième langue européenne la plus parlée dans le monde. Elle est officielle au
+                    Portugal, au Brésil, en Angola, au Cap-Vert, en Guinée-Bissau, à Macao, au Mozambique, à Sao
+                    Tomé-et-Principe et au Timor oriental, mais elle est aussi parlée dans l'ancienne Inde portugaise
+                    (Goa, Daman et Diu et Dadra et Nagar Haveli) et dans certains territoires contestés (comme Olivença,
+                    en Espagne) ou limitrophes de pays lusophones (comme l'Uruguay avec le Brésil).</p>
+                <p>Le portugais possède aussi un statut officiel dans l'Union européenne, dans l'Union des nations
+                    sud-américaines, dans l'Union latine, dans le Mercosur, dans la Communauté de développement
+                    d'Afrique australe et dans l'Union africaine. Le portugais est parfois désigné comme la « langue de
+                    Camões » (Luís de Camões, auteur de Os Lusíadas).</p>
+            </div>
+        </div>
 
-            <p>Parmi les plats typiques du pays, les plus populaires et qui font partie intégrante de la cuisine portugaise sont le cozido à portuguesa, le bacalhau à Brás ainsi que le bacalhau à Gomes de Sá ou encore le cochon de lait cuit à la mode du Bairrada rojões d'Aveiro et du Minho.
 
-            La cuisine portugaise a également influencé d'autres gastronomies, comme celle du Japon, avec l'introduction de la friture qui a donné plus tard le tempura.</p>
-        </div>    
-        
-    </div>
+        <hr class="w-75">
 
-    <hr class="w-75">
+        <div class="row mb-4 justify-content-between">
+            <div class="col-md-8">
+                <h2>L'Agriculture</h2>
+                <p>Avec un passé majoritairement agricole, et après les évolutions de ces dernières années, l'économie
+                    est fondée actuellement sur les services et sur l'industrie, qui représentent respectivement 67,8 %
+                    et 28,2 % du secteur économique portugais. L'agriculture portugaise bénéficie d'un climat et d'un
+                    relief favorables et de sols fertiles. Les dernières décennies ont permis d'intensifier la
+                    modernisation de l'agriculture et de la pêche, bien qu'encore 13 % de la population active y
+                    travaille toujours. Les oliviers (qui s'étendent sur 4 000 km2), les vignobles (qui occupent 3 750
+                    km2), le blé (sur 3 000 km2) et le maïs (qui représentent 2 680 km2) sont les principales cultures
+                    par la surface cultivée.</p>
+                <p>Les vins (les plus célèbres étant le vin de Porto, le vin de Madère et le vinho verde) et les huiles
+                    portugaises sont appréciés grâce à leur qualité. Le Portugal est également un pays producteur de
+                    fruits, notamment les oranges algarviennes, la pêra-rocha de l'Ouest, la cerise du Gardunha et la
+                    banane de Madère. Il existe aussi d'autres productions comme l'horticulture, la fromagerie et la
+                    floriculture, comme la betterave rouge, le fromage da Serra, l'huile de tournesol et le tabac. Le
+                    Portugal produit 52,5 % de la production mondiale de liège, des eucalyptus, du vin, du cuivre… C'est
+                    aussi un important importateur de produits alimentaires. Les importations proviennent de l'Union
+                    européenne à 76 %, 4 % de l'Amérique du Nord et 1 % des pays lusophones. Le secteur primaire
+                    (agriculture) représente 2,8 %, du PIB portugais, le secteur secondaire (industrie) 24,8 % et le
+                    secteur tertiaire (services) 72,4 %.</p>
 
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="../image/pt/vinporto.jpg" alt="porto"
+                    style="width: 80%; height: 370px; margin-top: 30px;">
+            </div>
+        </div>
 
+        <hr class="w-75">
+
+        <div class="row mb-4 justify-content-between">
+
+            <div class="col-md-6">
+                <img src="../image/pt/rancho.jpg" alt="Musique"
+                    style="width: 100%; height: 350px; margin-top: 10px;">
+            </div>
+            <div class="col-md-6">
+                <h2>La musique</h2>
+                <p>La musique traditionnelle portugaise est variée et très riche. Du folklore avec les danses du vira
+                    (région du Minho), du pauliteiros de Miranda (région Mirandaise), du corridinho de l'Algarve ou
+                    encore du bailinho de Madère. Les instruments typiques sont le cavaquinho, la cornemuse,
+                    l'accordéon, le violon, les tambours, la guitare portugaise (instrument caractéristique du fado) et
+                    toute une variété d'instruments à vent et de percussion. Dans la culture populaire existent encore
+                    les groupes philharmoniques qui représentent chaque localité et jouent des styles de musique
+                    différents, du populaire au classique.</p>
+                <p>Le style de musique portugais le plus connu est le fado, dont l'interprète la plus célèbre fut Amália
+                    Rodrigues. D'autres chanteurs comme Alfredo Duarte Marceneiro, Vicente da Câmara, Nuno da Câmara
+                    Pereira, Frei Hermano da Câmara, António Pinto Basto et Hermínia Silva se sont distingués en tant
+                    que fadistes. Ces dernières années, le fado a vu apparaître de jeunes chanteurs qui ont connu un
+                    grand succès, comme Camané, Mariza, Ana Moura, Mafalda Arnauth et Mísia entre autres, ainsi que de
+                    jeunes guitaristes comme Bernardo Couto.</p>
+            </div>
+        </div>
+
+        <hr class="w-75">
+
+        <div class="row mb-4 justify-content-between">
+            <div class="col-md-6">
+                <h2>Le Sport</h2>
+                <p>Le football est le sport le plus connu, aimé et pratiqué au Portugal. Eusébio est un grand symbole du
+                    football portugais et les plus récents phénomènes de popularité sont Cristiano Ronaldo, Luís Figo,
+                    Rui Costa, João Vieira Pinto et Pedro Miguel Pauleta, qui font partie des nombreux footballeurs de
+                    réputation mondiale nés au Portugal.</p>
+                <p>Le Sporting, Porto et Benfica sont les trois plus grands clubs de sport par leur popularité et le
+                    nombre de trophées gagnés. Ils ont gagné 12 titres européens, ils étaient présents dans beaucoup de
+                    finales et ont été les compétiteurs réguliers aux dernières étapes de presque chaque saison.</p>
+                <p>La « Seleção » a terminé finaliste de l'Euro 2004 à domicile, le Portugal étant le pays hôte du
+                    tournoi européen de football cette année-là189. L'équipe a perdu cette année-là en finale 0-1 face à
+                    la Grèce. L'équipe a également réussi à atteindre la troisième place lors de la Coupe du monde de
+                    football de 1966 et atteint la quatrième place de la Coupe du monde de football de 2006. Le Portugal
+                    remporte son premier titre majeur lors de l'Euro 2016 face à la France, le pays hôte, grâce à un but
+                    de l'attaquant Eder lors des prolongations.</p>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <img src="../image/pt/luz.jpg" alt="sport" style="height: 370px; width: 100%; margin-top: 10px;">
+            </div>
+        </div>
+
+        <hr class="w-75">
+
+        <div class="row mb-4 justify-content-between">
+
+            <div class="col-md-5 text-center">
+                <img src="../image/pt/cuisportugal.jpg" alt="produits régionaux"
+                    style="height: 380px; width: 250px; margin-top: 15px;">
+            </div>
+
+            <div class="col-md-7">
+                <h2>La gastronomie</h2>
+                <p>Chaque région du Portugal possède ses spécialités culinaires spécifiques, s'inspirant souvent des
+                    produits locaux. Les aliments de base dans cette cuisine sont la viande (de mouton, de porc et de
+                    volaille), diverses espèces de poissons et de coquillages (grande variété d'assiettes de morue — il
+                    existe 365 variantes de recettes pour la morue). La caldeirada (une sorte de bouillabaisse)
+                    est un plat typique de la municipalité de Peniche184 : il est composé de poissons, patate, oignons,
+                    tomates et de piments. Les fromages les plus populaires sont le fromage da Serra da Estrela et le
+                    fromage de Azeitão185. Bien sûr, il y a d'autres fromages populaires portugais sous l'appellation
+                    d'origine protégée.</p>
+
+                <p>Le Portugal est un pays fortement vinicole, les vins les plus célèbres sont les vins du Douro, de
+                    l'Alentejo et du Dão, les vins verts du Minho, et les liquoreux de Porto, Lourinhã et Madère. Dans
+                    les pâtisseries il existe une liste énorme de variétés de recettes traditionnelles, les plus
+                    célèbres étant les pastéis de nata (le secret de la recette est toujours bien gardé), les ovos moles
+                    d'Aveiro, les pastéis de Tentúgal, le pão-de-ló, et encore beaucoup d'autres.</p>
+
+                <p>Parmi les plats typiques du pays, les plus populaires et qui font partie intégrante de la cuisine
+                    portugaise sont le cozido à portuguesa, le bacalhau à Brás ainsi que le bacalhau à Gomes de Sá ou
+                    encore le cochon de lait cuit à la mode du Bairrada rojões d'Aveiro et du Minho.
+
+                    La cuisine portugaise a également influencé d'autres gastronomies, comme celle du Japon, avec
+                    l'introduction de la friture qui a donné plus tard le tempura.</p>
+            </div>
+
+        </div>
+
+        <hr class="w-75">
+
+</div>
 
 {% endblock %}

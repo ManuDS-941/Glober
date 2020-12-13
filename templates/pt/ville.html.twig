@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Découvrir 
+
+    {% for data in ville %}
+        {% if data.id == id %}
+            {{ data.title }}
+        {% endif %}
+    {% endfor %}! 
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+
+    <div class="text-light">
+        
+    </div>
+
+    <div class="row-12 p-0 m-2">
+
+        <div class="col-md-12 display-4 text-center my-4 text-start">
+
+            <!-- Ville choisie -->
+            <h1> Découvrir
+                {% for data in ville %}
+                            {% if data.id == id %}
+                                {{ data.title }}
+                            {% endif %}
+                {% endfor %} </h1>
+
+                
+                <!-- Selection des catégories -->
+                {# <h2>
+                    {% for data in category %}
+                    
+                    {% if data.ville.id == id %}
+                    <button class="btn btn-dark"><a href="{{ id }}/{{data.title}} ">{{ data.title }}</a></button>
+                    {% endif %}
+                    
+                    {% endfor %} 
+                </h2> #}
+                
+            </div>
+        </div>
+        
+    <button type="button" class="btn btn-dark"><a href="{{ path('pt') }}" style="text-decoration: none; color: white;">Retour au Portugal</a></button>
+
+
+
+    <div class="row">
+
+        
+        <!-- Selection d'une catégorie pour affichage -->
+        {# {% if category == lieu %}
+        
+            {% for data in category %}
+            
+            {% endfor %}
+
+        {% else %}
+
+                <h5>Selectionné une Catégorie</h5>
+
+        {% endif %}  #}
+
+
+
+
+        {% for data in lieu %}
+            {% if data.ville.id == id %}
+
+                
+                <div class="col-md-4">
+
+                    <div class="card mt-5">
+                        <h5 class="text-center">{{ data.category.title }}</h5>
+                        <img class="card-img-top" src="/image/{{ data.image }}" alt="Card image cap" style="height: 250px;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ data.title}} </h5>
+                            <p class="card-text">{{ data.adresse }}</p>
+
+                            <a href="{{ path('lieupt', {'id': data.id }) }}" class="btn btn-primary">Voir plus</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+
+</div>
+{% endblock %}
