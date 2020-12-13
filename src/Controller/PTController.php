@@ -9,6 +9,7 @@ use App\Entity\Pays;
 use App\Repository\LieuRepository;
 use App\Repository\VilleRepository;
 use App\Repository\CategoryRepository;
+use App\Repository\CommentRepository;
 use App\Repository\PaysRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,12 +23,6 @@ class PTController extends AbstractController
      */
     public function index(VilleRepository $repo): Response
     {
-
-        // Selectionne les données de Ville dans la BDD
-        // $tableau = $manager->getRepository(Pays::class)->findBy(['title' => 'Portugal']);
-
-        // dump($tableau);
-
         // Selectionne les villes dans la BDD
         $ville = $repo->findAll();
 
@@ -58,39 +53,45 @@ class PTController extends AbstractController
     /**
      * @Route("/pt/ville/{id}", name="villept")
      */
-    public function VillePT(CategoryRepository $repo): Response
+    public function VillePT($id, VilleRepository $repo, CategoryRepository $repo1, LieuRepository $repo2): Response
+    // $id : on récupère l'id de l'url dans une variable $id
     {
+        
+        $ville = $repo->findAll();
+        $category = $repo1->findAll();
+        $lieu = $repo2->findAll();
 
-        // dump($tableau);
-        $category = $repo->findAll();
+        dump($id); // // Verifie l'Id reçu
+        // dump($ville); // Verifie le tableau des villes
+        // dump($category); // Verifie le tableau des catégories
+        dump($lieu); // Verifie le tableau des lieus
 
-        // dump($category);
-
-        $categorypt = [];
-
-        foreach($category as $ville) 
-        {
-            //dump($ville->getVille()->getTitle()); // Je regarde la ville que je récupère
-            if($ville->getVille()->getTitle() == 'Lisbonne')
-            {
-                array_push($categorypt, $ville);
-            }
-        }
-        dump($categorypt);
-        dump($ville);
 
         return $this->render('pt/ville.html.twig', [
-            'category' => $categorypt
+            'id' => $id,
+            'ville' => $ville,
+            'category' => $category,
+            'lieu' => $lieu
         ]);
     }
 
-    // /**
-    //  * @Route("/pt/ville/category/{id}", name"categorypt")
-    //  */
-    // public function CatPT(): Response
-    // {
-    //     return $this->render('pt/category.html.twig');
-    // }
+    /**
+     * @Route("/pt/ville/lieu/{id}", name="lieupt")
+     */
+    public function CatPT($id, LieuRepository $repo, CommentRepository $repo1): Response
+    {
+        // dump($id);
+        $lieu = $repo->findAll();
+        // dump($lieu);
+        $comment = $repo1->findAll();
+        dump($comment);
+
+        return $this->render('pt/lieu.html.twig', [
+            'id' => $id,
+            'lieu' => $lieu,
+            'comment' => $comment
+        ]);
+    }
 
 
 

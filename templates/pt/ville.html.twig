@@ -1,64 +1,96 @@
 {% extends 'base.html.twig' %}
 
-{# {% block title %}Découvrir {{ category.title }}! {% endblock %} #}
+{% block title %}Découvrir 
+
+    {% for data in ville %}
+        {% if data.id == id %}
+            {{ data.title }}
+        {% endif %}
+    {% endfor %}! 
+
+{% endblock %}
 
 {% block body %}
 
 
 <div class="container">
 
-    <button type="button" class="btn btn-dark"><a href="{{ path('pt') }}">Retour</a></button>
+    <div class="text-light">
+        
+    </div>
 
     <div class="row-12 p-0 m-2">
 
         <div class="col-md-12 display-4 text-center my-4 text-start">
 
-            {# <h1> Découvrir {{ category.title }} </h1> #}
-        </div>
-    </div>
+            <!-- Ville choisie -->
+            <h1> Découvrir
+                {% for data in ville %}
+                            {% if data.id == id %}
+                                {{ data.title }}
+                            {% endif %}
+                {% endfor %} </h1>
 
-    <div class="row mb-4">
-    {# {% for data in category %}
-    
-        {% for data in data %}
-
-            {{ data.title }}
-            
-        {% endfor %} #}
-
-        {# <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="/image/{{ data.image }}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{ data.title}} </h5>
-                    <p class="card-text">{{ data.adresse }}</p>
-
-                    <a href="#" class="btn btn-primary">Voir plus</a>
-                </div>
+                
+                <!-- Selection des catégories -->
+                {# <h2>
+                    {% for data in category %}
+                    
+                    {% if data.ville.id == id %}
+                    <button class="btn btn-dark"><a href="{{ id }}/{{data.title}} ">{{ data.title }}</a></button>
+                    {% endif %}
+                    
+                    {% endfor %} 
+                </h2> #}
+                
             </div>
-        </div> #}
+        </div>
+        
+    <button type="button" class="btn btn-dark"><a href="{{ path('pt') }}" style="text-decoration: none; color: white;">Retour au Portugal</a></button>
 
-    {# {% endfor %} #}
+
+
+    <div class="row">
+
+        
+        <!-- Selection d'une catégorie pour affichage -->
+        {# {% if category == lieu %}
+        
+            {% for data in category %}
+            
+            {% endfor %}
+
+        {% else %}
+
+                <h5>Selectionné une Catégorie</h5>
+
+        {% endif %}  #}
+
+
+
+
+        {% for data in lieu %}
+            {% if data.ville.id == id %}
+
+                
+                <div class="col-md-4">
+
+                    <div class="card mt-5">
+                        <h5 class="text-center">{{ data.category.title }}</h5>
+                        <img class="card-img-top" src="/image/{{ data.image }}" alt="Card image cap" style="height: 250px;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ data.title}} </h5>
+                            <p class="card-text">{{ data.adresse }}</p>
+
+                            <a href="{{ path('lieupt', {'id': data.id }) }}" class="btn btn-primary">Voir plus</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
     </div>
 
-    
-
-    {# <div class="text-center my-4">
-        {% for data in category %}
-            <button type="button" class="btn btn-primary text-center my-4"> {{ data.title }} </button>
-        {% endfor %} 
-
-    </div>#}
-
-    {# <div class="text-center">
-        <h2>Laissez-vous séduire !</h2>
-        </p>
-        <p>Ville de l’amour, capitale de la mode, paradis littéraire…
-            <br>Paris compte de multiples visages.
-            <br>Musées, restaurants, activité, ...
-            <br>Venez côtoyer les habitués d’un authentique marché français,
-        </p>
-    </div> #}
 
 
 </div>
