@@ -39,7 +39,29 @@ class FrController extends AbstractController
     /**
      * @Route("/fr/show_fr_ville/{id}", name="show_fr_ville")
      */
-    public function showVille(Ville $ville, CategoryRepository $repo, EntityManagerInterface $manager): Response
+    public function showVille(Ville $ville, Category $category, CategoryRepository $repo, EntityManagerInterface $manager): Response
+    {
+        // Selectionne les données de catégory dans la BDD
+        $colonnes = $manager->getClassMetadata(Category::class)->getFieldNames();
+
+        // Selectionne les catégories dans la BDD
+        //$category = $repo->findAll();
+
+        dump($category);
+
+        //Permet l'affichage
+        return $this->render('fr/show_fr_ville.html.twig', [
+            'controller_name' => 'FrController',
+            'colonnes' => $colonnes,
+            'category' => $category,
+            'ville' => $ville
+        ]);
+    }
+
+    /**
+     * @Route("/fr/show_fr_category/{id}", name="show_fr_category")
+     */
+    public function articlesType(Ville $ville, CategoryRepository $repo, EntityManagerInterface $manager): Response
     {
         // Selectionne les données de catégory dans la BDD
         $colonnes = $manager->getClassMetadata(Category::class)->getFieldNames();
@@ -58,7 +80,7 @@ class FrController extends AbstractController
         ]);
     }
 
-
+    
 
 }
 
