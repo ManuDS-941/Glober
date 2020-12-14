@@ -86,34 +86,34 @@ nav ul li a {
 
 @media screen and (max-width: 864px) {
     .logo {
-          padding: 0;
+        padding: 0;
     }
 
     .nav-wrapper {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-          background: #fff;
-          opacity: 0;
-          transition: all 0.2s ease;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #fff;
+        opacity: 0;
+        transition: all 0.2s ease;
     }
 
     .nav-wrapper ul {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
     }
 
     .nav-wrapper ul li {
-          display: block;
-          float: none;
-          width: 100%;
-          text-align: right;
-          margin-bottom: 10px;
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 10px;
     }
 
     .nav-wrapper ul li:nth-child(1) a {
@@ -153,15 +153,15 @@ nav ul li a {
     }
 
     .nav-btn {
-          position: fixed;
-          right: 10px;
-          top: 10px;
-          display: block;
-          width: 48px;
-          height: 48px;
-          cursor: pointer;
-          z-index: 9999;
-          border-radius: 50%;
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        z-index: 9999;
+        border-radius: 50%;
     }
 
     .nav-btn i {
@@ -232,14 +232,14 @@ nav ul li a {
 /*--------------------------------Body------------------------*/
 
 body{
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(to top, #ffffff, #eef1fb, #d5e5f6, #b7dbee, #96d1e0, #96d1e0, #96d1e0, #96d1e0, #b7dbee, #d5e5f6, #eef1fb, #ffffff);
 }
 
 
 
 
- #earth_div{ top: 0; right: 0; bottom: 0; left: 0; position: absolute !important; z-index: 0;}
+#earth_div{ top: 0; right: 0; bottom: 0; left: 0; position: absolute !important; z-index: 0;}
 
 /*--------------------------------end Body------------------------*/
 
@@ -256,6 +256,78 @@ body{
 /*--------------------------------Footer------------------------*/
 
 
+
+
+footer{
+    
+    position:absolute;
+    
+    bottom:0;
+    
+    width:100%;
+    
+    padding-top:50px;
+    
+    height:125px;
+    
+    }
+
+
+
+
+ 
+      
+      .icon-box {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 70px;
+        width: 30%;
+        margin: 0;
+      }
+      
+      button:focus {
+        outline: none;
+      }
+      
+      .btnrs{
+        min-width: 50px;
+        margin: 10px;
+        border-radius: 50%;
+        border: none;
+        
+        box-shadow: inset 0px 0px 0px 1px rgb(84, 184, 214);
+      }
+      
+      .btnrs:hover {
+        color: #f8f8ff;
+        transition: 0.7s;
+        cursor: pointer;
+      }
+      
+      .icon {
+        font-size: 20px;
+      }
+      
+      .facebook:hover {
+        background-color: #1977f3;
+      }
+      
+      .instagram:hover {
+      background: linear-gradient(-135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+      }
+      
+      .twitter:hover {
+        background-color: #2bc4ff;
+      }
+      
+      .youtube:hover {
+        background-color: #fe0000;
+      }
 
 
 
