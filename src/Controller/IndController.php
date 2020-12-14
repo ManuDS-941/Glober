@@ -22,21 +22,29 @@ class IndController extends AbstractController
     /**
      * @Route("/ind", name="ind")
      */
-    public function adminArticles(EntityManagerInterface $manager, VilleRepository $repo): Response
+    public function index (VilleRepository $repo): Response
     {
-        $colonnes = $manager->getClassMetadata(Ville::class)->getFieldNames();
-
-        dump($colonnes);
-
+    
         $ville = $repo->findAll();
 
         dump($ville);
 
+        $villeind = [];
+
+        foreach($ville as $pays)
+        {
+            if($pays->getPays()->getTitle() == 'Inde')
+            {
+                array_push($villeind, $pays);
+            }
+
+        }
+
 
         return $this->render('ind/index.html.twig', [
             'controller_name' => 'IndController',
-            'colonnes' => $colonnes,
-            'ville' => $ville
+            
+            'ville' => $villeind
             
             
         ]);
@@ -45,24 +53,26 @@ class IndController extends AbstractController
     /**
      * @Route("/ind/pondy/{id}", name="pondy")
      */
-    public function pondy(EntityManagerInterface $manager, CategoryRepository $repo1, Category $category, Ville $ville): Response
+    public function VilleIN($id, VilleRepository $repo, CategoryRepository $repo1, LieuRepository $repo2): Response
+    // $id : on récupère l'id de l'url dans une variable $id
     {
-        $colonnes = $manager->getClassMetadata(Category::class)->getFieldNames();
 
-        dump($colonnes);
+        $ville = $repo->findAll();
+        $category = $repo1->findAll();
+        $lieu = $repo2->findAll();
 
-        //  $category = $repo1->findAll();
-
-        dump($category);
+        dump($id); // // Verifie l'Id reçu
+        // dump($ville); // Verifie le tableau des villes
+        // dump($category); // Verifie le tableau des catégories
+        dump($lieu); // Verifie le tableau des lieus
 
         return $this->render('ind/pondy.html.twig', [
-            'controller_name' => 'IndController',
-            'colonnes' => $colonnes,
+            'id' => $id,
+            'ville' => $ville,
             'category' => $category,
-            'ville' => $ville
-            ]);
+            'lieu' => $lieu
+        ]);
     }
-
 
 }
 
