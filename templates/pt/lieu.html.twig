@@ -26,7 +26,7 @@
 	{% if data.id == id %} 
 		<div class="col-md-12">
 			<div class="card mb-4 shadow-sm">
-				<img src="/image/{{ data.image }}" alt="" style="min-height: 50vh;">
+				<img src="/image/{{ data.image }}" alt="" style="min-height: 100vh;">
 				<div class="card-body">
 				{#<p class="card-text">{{ lieu.content|raw }}</p>
 				</div>
@@ -38,9 +38,8 @@
 					<strong>{{ article.category.title }}</strong> #}
 					Adresse : {{ data.adresse }}
 
-					Description :
 				</small>
-
+					Description :
 				<small>
 					
 				</small>
@@ -49,6 +48,8 @@
 		{% endif %}
 
 	{% endfor %}
+	
+	<div class="container">
 
 	<h4 class="my-4">Donner son avis...</h4>
 
@@ -60,69 +61,49 @@
 		</div>
 
 	{% endfor %}
-
+	#}
+	
 	<!-- Affichage du formulaire d'ajout de commentaire envoyé par le controller BlogController  -->
+	
+	
+	{#
 	{{ form_start(formComment) }}
-
 	{{ form_row(formComment.author, {'label': "Nom d'utilisateur"})}}
 
 	{{ form_row(formComment.content, {'label': "Saisir votre commentaire"})}}
 
 	<button type="submit" class="btn btn-dark">Poster le commentaire</button>
-
-
+	
 	{{ form_end(formComment) }}
-
 	#}
+
+	
 
 
 
 	<h4 class="my-4">Vos réactions...</h4>
 
-	<div class="row mb-5">
 
-		{% for data in comment %}
+		<div class="row mb-5">
 
-			<div class="col-md-4 border p-2">
-				<div class="text-center">
-					<span class="col-12">{{ data.pseudo }}</span><br>
-					<small class="font-italic">( Posté le {{ data.createdAt|date('d/m/Y')}} à {{ data.createdAt|date('H:i:s') }})</small>
+			{% for data in selectcomment %}
+
+				<div class="col-md-4 border p-2">
+					<div class="text-center">
+						<span class="col-12">{{ data.pseudo }}</span><br>
+						<small class="font-italic">( Posté le {{ data.createdAt|date('d/m/Y')}} à {{ data.createdAt|date('H:i:s') }})</small>
+					</div>
 				</div>
-			</div>
 
-			<div class="col-md-8 border p-2">
-				{{ data.commentaire|striptags }}
-			</div>
+				<div class="col-md-8 border p-2">
+					{{ data.commentaire|striptags }}
+				</div>
 
-		{% endfor %}
+			{% endfor %}
 
-	</div>
-	
-	
+		</div>
+
+	</div>	
 	
 {% endblock %}
 
-
-
-{#
-
-{% if is_granted('ROLE_ADMIN') %}
-<li>
-	<a href="{{ path('admin') }}">Gestions</a>
-</li>
-
-{% endif %}
-
-{% if app.user %}
-
-<li>
-	<a href="{{ path('deconnexion') }}">Deconnexion</a>
-</li>
-
-{% endif %}
-
-<li>
-	<a href="">Se connecter</a> 
-</li>
-
-#}

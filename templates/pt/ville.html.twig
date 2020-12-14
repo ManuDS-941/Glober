@@ -30,44 +30,39 @@
                                 {{ data.title }}
                             {% endif %}
                 {% endfor %} </h1>
-
-                
-                <!-- Selection des catégories -->
-                {# <h2>
-                    {% for data in category %}
-                    
-                    {% if data.ville.id == id %}
-                    <button class="btn btn-dark"><a href="{{ id }}/{{data.title}} ">{{ data.title }}</a></button>
-                    {% endif %}
-                    
-                    {% endfor %} 
-                </h2> #}
                 
             </div>
         </div>
         
     <button type="button" class="btn btn-dark"><a href="{{ path('pt') }}" style="text-decoration: none; color: white;">Retour au Portugal</a></button>
 
+    <div class="text-center">
+        {% for data in cat %}
+            <button class="btn btn-dark"><a href="#" id="a"> {{ data.title }} </a></button>
+        {% endfor %}
 
-
-    <div class="row">
-
+    </div>
         
-        <!-- Selection d'une catégorie pour affichage -->
-        {# {% if category == lieu %}
         
-            {% for data in category %}
+        
+    <!-- <div class="show">
+        
+        <div id="Monument">
+            Monument
+        </div>   
+        
             
-            {% endfor %}
+        <div id="Activite">
+            Activité
+        </div>
 
-        {% else %}
-
-                <h5>Selectionné une Catégorie</h5>
-
-        {% endif %}  #}
-
-
-
+        <div id="Restaurant">
+            Restaurant
+        </div>
+    
+    </div> -->
+    
+    <div class="row show">
 
         {% for data in lieu %}
             {% if data.ville.id == id %}
@@ -90,7 +85,6 @@
             {% endif %}
         {% endfor %}
     </div>
-
 
 
 </div>
