@@ -15,6 +15,7 @@ use App\Repository\VilleRepository;
 use App\Repository\CommentRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -56,8 +57,9 @@ class PTController extends AbstractController
 
     /**
      * @Route("/pt/ville/{id}", name="villept")
+     * 
      */
-    public function VillePT($id, VilleRepository $repo, CategoryRepository $repo1, LieuRepository $repo2): Response
+    public function VillePT($id, VilleRepository $repo, CategoryRepository $repo1, LieuRepository $repo2, Request $request): Response
     // $id : on récupère l'id de l'url dans une variable $id
     {
         
@@ -66,19 +68,32 @@ class PTController extends AbstractController
         $lieu = $repo2->findAll();
 
         $cat = $repo1->findBy(['ville' => $id]);
+        
         dump($cat);
 
-        //dump($id); // // Verifie l'Id reçu
+        // dump($request);
+
+        //$query = $request->getRequestUri(); // Exemple du cas qui marche
+
+        //$Monument = $request->query->get('title', "Monument" );
+        //$Activite = $request->query->get('title', "Activite" );
+
+        //dump($query);
+
+        // dump($id); // // Verifie l'Id reçu
         // dump($ville); // Verifie le tableau des villes
         // dump($category); // Verifie le tableau des catégories
-       // dump($lieu); // Verifie le tableau des lieus
+        dump($lieu); // Verifie le tableau des lieus
 
         return $this->render('pt/ville.html.twig', [
             'id' => $id,
             'ville' => $ville,
             'category' => $category,
             'lieu' => $lieu,
-            'cat' =>$cat
+            'cat' => $cat,
+            //'query' => $query,
+            //'Monument' => $Monument,
+            //'Activite' => $Activite
         ]);
     }
 
