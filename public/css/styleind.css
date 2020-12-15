@@ -43,6 +43,13 @@
    
    
 }
+.comm
+{
+    width: 50%;
+    height: 10vh;
+   margin-left: 25%;
+   margin-right: 25%;
+}
 #contain
 {
     margin-top: 5rem;
@@ -80,18 +87,13 @@
 {
    margin-top: 2rem;
 }
-  /* @media (min-width: 768px) 
+   /* @media (min-width: 768px) 
  {
-    
-.navb
-{
-    width: 110%;
-}
-
-.h
-{
-    width: 110%;
-}
+    #com
+    {
+        height: 5vh;
+    }
 
 
-}   */
+
+}    */
