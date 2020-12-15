@@ -36,6 +36,12 @@
 
      <button type="button" class="btn btn-secondary"><a href="{{ path('ind') }}" style="text-decoration: none; color: white;">Back To India</a></button> 
 
+{% for data in category %}
+
+
+                            <button type="button" class="btn btn-secondary">{{ data.title }}</button> 
+                            
+                {% endfor %} </h1>
 
 
     <div class="row">
@@ -53,7 +59,7 @@
                             <h5 class="card-title">{{ data.title}} </h5>
                             <p class="card-text">{{ data.adresse }}</p>
 
-                            {# <a href="{{ path('lieupt', {'id': data.id }) }}" class="btn btn-primary">Voir plus</a>  #}
+                              <a href="{{ path('comment', {'id': data.id }) }}" class="btn btn-secondary">Voir plus</a>   
 
                         </div>
                     </div>

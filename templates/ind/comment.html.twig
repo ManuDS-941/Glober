@@ -1,0 +1,109 @@
+{% extends "base.html.twig" %}
+
+{% block title %} 
+	{% for data in lieu %}
+		{% if data.id == id %} 
+			{{ data.title }}
+		{% endif %}
+	{% endfor %}  
+{% endblock %}
+
+
+{% block body %}
+	<h1 class="display-4 text-center my-4"> 
+		{% for data in lieu %}
+			{% if data.id == id %} 
+				{{ data.title }}
+			{% endif %}
+		{% endfor %} 
+	</h1>
+
+ <button type="button" class="btn btn-secondary"><a href="{{ path('ind') }}" style="text-decoration: none; color: white;">Back To India</a></button> 
+
+   
+
+{% for data in lieu %}
+	
+	{% if data.id == id %} 
+		<div class="comm col-md-12">
+			<div class="card mb-4 shadow-sm">
+				<img src="/image/{{ data.image }}" alt="" >
+				<div class="card-body">
+				{#<p class="card-text">{{ lieu.content|raw }}</p>
+				</div>
+				<small class="text-muted ml-2 mb-2">Publi� le
+					{{ article.createdAt|date('d/m/Y')}}
+					�
+					{{ article.createdAt|date('H:i:s') }}
+					dans la cat�gorie
+					<strong>{{ article.category.title }}</strong> #}
+					Adresse : {{ data.adresse }}
+
+				</small>
+					Description :
+				<small>
+					
+				</small>
+			</div>
+		</div> 
+		{% endif %}
+
+	{% endfor %}
+	
+	<div class="container">
+
+	{# <h4 class="my-4">Donner son avis...</h4> #}
+
+	
+	  {# flashes('success') permet d'avoir accès à tout les messages utilisateurs, 'success' est un identifiant de message définit dans le controler #}
+            {% for message in app.flashes('success') %}
+
+                <div class="col-md-5 bg-success p-3 rounded mx-auto text-center text-white">
+                {{ message }}
+                </div>
+
+            {% endfor %}
+
+            <h4 class="mt-5 mb-3">Donner votre avis...</h4>
+
+            {# Affichage du formulaire d'ajout de commentaire envoyé par le controller BlogController #}
+            {{ form_start(formComment) }}
+
+                {# {{ form_row(formComment.author, {'label': "Nom d'utilisateur"}) }} #}
+
+                {{ form_row(formComment.commentaire, {'label': "Saisir votre commentaire", 'attr': {"rows": 15}, 'attr': {'class':'form-control'}}) }}
+
+                <button type="submit" class="btn btn-dark">Poster le commentaire</button>
+
+            {{ form_end(formComment) }}
+
+	
+
+
+
+	<h4 class="my-4">Vos r�actions...</h4>
+
+
+		<div class="row mb-5">
+
+			{% for data in selectcomment %}
+
+				<div class="col-md-4 border p-2">
+					<div class="text-center">
+						<span class="col-12">{{ data.pseudo }}</span><br>
+						<small class="font-italic">( Post� le {{ data.createdAt|date('d/m/Y')}} � {{ data.createdAt|date('H:i:s') }})</small>
+					</div>
+				</div>
+
+				<div class="col-md-8 border p-2">
+					{{ data.commentaire }}
+				</div>
+
+			{% endfor %}
+
+		</div>
+
+	</div>	
+	
+{% endblock %}
+
