@@ -93,3 +93,111 @@ body {
         margin-top: 7rem;
     }
 }
+
+/**************************************/
+
+::before, ::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    text-align: center;
+    height: 100vh;
+}
+.earth
+{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 350px;
+    left: 45%;
+    /* margin: 10% 0 10% 43%; */
+    animation: earthspin 10s linear infinite;
+}
+
+.earth img
+{
+    width: 90%;
+    transform: scale(1.3);
+
+}
+
+@keyframes earthspin{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.plane h1
+{
+    color: #428bca;
+    font-size: 3em;
+    transform: rotate(0deg);
+}
+
+.plane {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 250px;
+    left: 36%;
+    /* margin: -374px 0 0 639px; */
+    animation: plane 10s linear infinite;
+    /* transform-origin: 120px 120px; */
+}
+
+@keyframes plane{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading
+{
+    font-size: 4em;
+    position: absolute;
+    top: 610px;
+    left: 44%;
+}  
+
+/****** JS *************/
+
+.loader
+{
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9000;
+}
+
+.fondu-out
+{
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+
+.accueil
+{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+}
+
