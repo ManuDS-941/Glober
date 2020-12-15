@@ -8,10 +8,11 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 class CommentType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('pseudo')
