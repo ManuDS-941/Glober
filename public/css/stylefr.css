@@ -1,6 +1,11 @@
 /*********************************************************************************************/
 /************  show_fr_ville.html.twig  ***************************************************/
 /*********************************************************************************************/
+.carouselFr{
+    height: 500px;
+    max-height: 500px;
+}
+
 @media (min-width: 768px) {
     .carousel-multi-item-2 .col-md-3 {
         float: left;
@@ -17,11 +22,4 @@
 /************  show_fr_category.html.twig  ***************************************************/
 /*********************************************************************************************/
 
-div .titreVilleFr
-{
-    background-image: url(../image/fr/image_titre.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-    background-color: brown;
-}
+
