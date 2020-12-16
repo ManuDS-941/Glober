@@ -17,6 +17,7 @@
             <link rel="stylesheet" href="{{ asset('css/stylefr.css')}}">
             <link rel="stylesheet" href="{{ asset('css/stylees.css')}}">
             <link rel="stylesheet" href="{{ asset('css/styleaccueil.css')}}">
+            <link rel="stylesheet" href="{{ asset('css/stylecontact.css')}}">
 
 
         {% endblock %}
@@ -33,15 +34,15 @@
                         <i></i>
                 </label>
                 <div class="logo">
-                        <a href="{{path('accueil')}}">Globe</a>
+                        <a href="{{path('accueil')}}">Glober</a>
                 </div>
                 <div class="nav-wrapper">
                         <ul>
                             <li><a href="{{path('fr')}}">France</a></li>
-                            <li><a href="{{path('es')}}">Espagne</a></li>
-                            <li><a href="{{path('pt')}}">Portugal</a></li>
+                            
                             <li><a href="{{path('ind')}}">Inde</a></li>
-                            <li><a href="#">Roradmap</a></li>
+                            <li><a href="{{path('pt')}}">Portugal</a></li>
+                            <li><a href="{{path('contact')}}">Info/Contact</a></li>
                             {% if is_granted('ROLE_ADMIN') %}
                             <li><a href="{{ path('admin') }}">Gestions Admin</a></li>
                             {% endif %}
