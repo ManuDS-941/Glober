@@ -12,7 +12,7 @@ class CommentaireType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('pseudo')
+            //->add('pseudo')
             ->add('commentaire')
             // ->add('createdAt')
             // ->add('lieu')
