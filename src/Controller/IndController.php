@@ -85,6 +85,8 @@ class IndController extends AbstractController
     public function CatIN($id, LieuRepository $repo, Request $request, Lieu $lieu, CommentRepository $repo1, EntityManagerInterface $manager): Response
     {
         // dump($id);
+        $lieu2 = $repo->findAll();
+        dump($lieu2);
         
         $comment = new Comment;
         
@@ -117,17 +119,18 @@ class IndController extends AbstractController
         }
 
         
-        $lieu = $repo->findAll();
+        // $lieu = $repo->findAll();
         // dump($lieu);
-        $selectcomment = $repo1->findAll();
+        // $selectcomment = $repo1->findAll();
         // dump($comment);
 
         return $this->render('ind/comment.html.twig', [
             'id' => $id,
             'lieu' => $lieu,
+            'lieu2' => $lieu2,
             'comment' => $comment,
-            'formComment' => $formComment->createView(),
-            'selectcomment' => $selectcomment
+            'formComment' => $formComment->createView()
+            
         ]);
     }
 }
