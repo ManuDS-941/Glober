@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use DateTime;
 use App\Entity\Lieu;
 use App\Entity\Pays;
 use App\Entity\Ville;
@@ -100,31 +101,54 @@ class PTController extends AbstractController
     /**
      * @Route("/pt/ville/lieu/{id}", name="lieupt")
      */
-    public function CatPT($id, LieuRepository $repo, CommentRepository $repo1): Response
+    public function LieuPT($id, LieuRepository $repo, Lieu $lieu, CommentRepository $repo1, Request $request, EntityManagerInterface $manager): Response
     {
-        // dump($id);
-        
-        $comment = new Comment;
-        
-        //$formComment = $this->createForm(CommentaireType::class, $comment); // Créer un formulaire et on stock dans la variable $comment
-        
-        //dump($formComment);
-        
-        // $formComment->handleRequest($comment);
-        
-        
-        $lieu = $repo->findAll();
-        // dump($lieu);
-        $selectcomment = $repo1->findAll();
-        // dump($comment);
-
-        return $this->render('pt/lieu.html.twig', [
-            'id' => $id,
-            'lieu' => $lieu,
-            'comment' => $comment,
-            //'formComment' => $formComment,
-            'selectcomment' => $selectcomment
-        ]);
+            // dump($id);
+            $lieu2 = $repo->findAll();
+            dump($lieu2);
+    
+    
+            $comment = new Comment;
+            // dump($comment);
+    
+            $formComment = $this->createForm(CommentaireType::class, $comment);   // importation du formulaire d'ajout de commentaire relié à l'entité $comment
+            dump($formComment);
+            
+            $formComment->handleRequest($request);   // on rempli l'objet (entité) $comment avec les données saisies dans le formulaire
+            
+            // Si le formulaire a bien été validé, on entre dans la condition IF
+            if($formComment->isSubmitted() && $formComment->isValid())
+            {
+                // getUser() : permettant de récupérer les données de l'utilisateur en session
+                // On stock le nom d'utilisateur dans la variable ¤username
+                $username = $this->getUser()->getUsername();
+                dump($username);
+            
+                // On renseigne le setter de l'auteur afin qu'il soit automatiquement compris dans le commentaire
+                $comment->setPseudo($username);
+                $comment->setCreatedAt(new \DateTime);   // on insère une date de création du commentaire
+                $comment->setLieu($lieu);   // On relie le commentaire au lieu (clé étrangère)
+            
+            
+                $manager->persist($comment);   // on prépare l'insertion
+                $manager->flush();   // on execute l'insertion
+            
+                // Envoi d'un message de validation
+                $this->addFlash('success', "Le commentaire a bien été posté !");
+            
+                // On redirige vers la page du lieu après l'insertion du commentaire
+                return $this->redirectToRoute('lieuFr',[
+                    'id' => $lieu->getId()
+                ]);
+            }
+    
+            return $this->render('pt/lieu.html.twig', [
+                'id' => $id,
+                'lieu' => $lieu,
+                'lieu2' => $lieu2,
+                'comment' => $comment,
+                'formComment' => $formComment->createView()
+            ]);
     }
 
 

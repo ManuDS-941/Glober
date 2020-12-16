@@ -38,7 +38,7 @@ function initialize() {
 }
 
 
-/************************************************************/
+/************************** LOADING EARTH **********************************/
 
 
 const loader = document.querySelector('.loader');

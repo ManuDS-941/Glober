@@ -15,9 +15,6 @@
 
 <div class="container">
 
-    <div class="text-light">
-        
-    </div>
 
     <div class="row-12 p-0 m-2">
 
@@ -38,14 +35,14 @@
 
     <div class="text-center">
         
-        {% for data in cat %}
+        {# {% for data in cat %}
             <button class="btn btn-dark"><a href="?{{ path('details', {'title': data.title, 'id': data.id }) }}"> {{ data.title }} </a></button>
-        {% endfor %}
+        {% endfor %} #}
 
     </div>
         
-        
-        {# Filtre Monument #}
+{#         
+        {# Filtre Monument 
         {% if "/pt/ville/4?/Monument?id=1" ==  query %}
                 
         <div class="row">
@@ -76,8 +73,8 @@
             {% endfor %}
         </div>
 
-        {# Filtre Activité #}
-        {% elseif "/pt/ville/4?/Activite?id=2" ==  query %}
+        {# Filtre Activité 
+        {% elseif "/pt/ville/4?/Activite?id=2" ==  query %} 
                 
         <div class="row">
             {% for data in lieu %}
@@ -107,7 +104,8 @@
                 {% endfor %}
             </div>
 
-        {% else %}
+        {% else %}#}
+
                 <div class="row show">
 
                     {% for data in lieu %}
@@ -115,7 +113,6 @@
             
                             
                             <div class="col-md-4">
-            
                                 <div class="card mt-5">
                                     <h5 class="text-center">{{ data.category.title }}</h5>
                                     <img class="card-img-top" src="/image/{{ data.image }}" alt="Card image cap" style="height: 250px;">
@@ -123,20 +120,23 @@
                                         <h5 class="card-title">{{ data.title}} </h5>
                                         <p class="card-text">{{ data.adresse }}</p>
             
-                                        <a href="{{ path('lieupt', {'id': data.id }) }}" class="btn btn-primary">Voir plus</a>
+                                        <a href="{{ path('lieupt', {'id': data.id }) }}" class="boutton btn btn-primary">Voir plus</a>
                                         
                                     </div>
                                 </div>
                             </div>
                         {% endif %}
                     {% endfor %}
+
                 </div>
 
 
-        {% endif %}
+        {# {% endif %} #}
         
     
-  
+
+        <br>
+
 
 
 </div>

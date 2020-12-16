@@ -34,14 +34,14 @@ class FrController extends AbstractController
 
         foreach($ville as $pays){
         // dump($pays->getPays()->getTitle());
-            if($pays->getPays()->getTitle() == "FRANCE")
+            if($pays->getPays()->getTitle() == "France")
             {
                 array_push($villesFr, $pays);
             }
             //dump($villesFr);
         }
 
-        // dump($villesFr);
+        //dump($villesFr);
 
         //Permet l'affichage
         return $this->render('fr/index_fr.html.twig', [
