@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+
+    <button type="button" class="btn btn-dark ml-10px"><a href="{{ path('fr') }}">Retour</a></button>
+    {% if is_granted('ROLE_ADMIN') %}
+        <button type="button" class="btn btn-dark"><a href="{{ path('admin') }}">Back Office</a></button>
+    {% endif %}  
+
+    <div class="col-md-12 display-4 text-center my-4 text-start">
+            <!-- Titre de la page de la Ville choisie -->
+            <h1> Découvrir
+                {% for data in ville %}
+                            {% if data.id == id %}
+                                {{ data.title }}
+                            {% endif %}
+                {% endfor %} </h1>
+    </div>
+
+    <div class="text-center my-4">
+        {% for data in cat %}    {# selectionne et affiche category.lieus #}
+            <button type="button" class="btn btn-primary text-center my-4"> {{ data.title }} </button>
+        {% endfor %}
+    </div> 
+
+
+<div class="container">
+
+    <div class="text-light">
+
+    </div>
+
+    <div class="row-12 p-0 m-2">
+
+        {# <div class="col-md-12 display-4 text-center my-4 text-start">
+            <!-- Ville choisie -->
+            <h1> Découvrir
+                {% for data in ville %}
+                            {% if data.id == id %}
+                                {{ data.title }}
+                            {% endif %}
+                {% endfor %} </h1>
+            </div> #}
+        </div>
+
+    {# <button type="button" class="btn btn-dark"><a href="{{ path('fr') }}" style="text-decoration: none; color: white;">Retour</a></button> #}
+
+
+
+    <div class="row">
+
+        {% for data in lieu %}
+            {% if data.ville.id == id %}
+
+
+                <div class="col-md-4">
+
+                    <div class="card mt-5">
+                        <h5 class="text-center">{{ data.category.title }}</h5>
+                        <img class="card-img-top" src="/image/{{ data.image }}" alt="Card image cap" style="height: 250px;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ data.title}} </h5>
+                            <p class="card-text">{{ data.adresse }}</p>
+
+                            <a href="{{ path('lieuFr', {'id': data.id }) }}" class="btn btn-primary">Voir plus</a>
+
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

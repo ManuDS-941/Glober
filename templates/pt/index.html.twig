@@ -22,10 +22,13 @@
                             Choisir une ville
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                             {% for data in ville %}
                             <a class="dropdown-item" href="{{ path('villept', {'id': data.id }) }}">
                                 {{ data.title }} </a>
+                                
                             {% endfor %}
+
                         </div>
                     </li>
                 </ul>

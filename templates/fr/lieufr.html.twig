@@ -1,0 +1,93 @@
+{% extends "base.html.twig" %}
+
+{% block title %} 
+    <p>
+	    {% for data in lieu2 %}
+	    	{% if data.id == id %} 
+	    		{{ data.title }}
+	    	{% endif %}
+	    {% endfor %}  
+    </p>
+{% endblock %}
+
+
+{% block body %}
+    <button type="button" class="btn btn-dark ml-10px"><a href="{{ path('fr') }}">Retour</a></button>
+
+	<h1 class="display-4 text-center my-4"> 
+		{% for data in lieu2 %}
+			{% if data.id == id %} 
+				{{ data.title }}
+			{% endif %}
+		{% endfor %} 
+	</h1>
+
+<div class="container">
+    <div class="col-md-12">
+
+{% for data in lieu2 %}
+	
+	{% if data.id == id %} 
+		<div class="col-md-12">
+			<div class="cardVille mb-4 shadow-sm">
+				<img src="/image/{{ data.image }}" alt="" style="min-height: 50vh; max-height: 70vh; width: 100%">
+				<div class="card-body">
+					Adresse : {{ data.adresse }}
+                    <br>
+					Description :
+				</small>
+			</div>
+		</div> 
+		{% endif %}
+    
+
+{% endfor %}
+
+	<h4 class="my-4">Ajouter un commentaire...</h4>
+    {% if is_granted('ROLE_USER') %}
+	    {% for message in app.flashes('success') %}
+	    	<div class="col-md-5 bg-success p-3 rounded mx-auto text-center text-white">
+	    		{{ message }}
+	    	</div>
+	    {% endfor %}
+
+	    <!-- Affichage du formulaire d'ajout de commentaire envoyé par le controller FrController  -->
+	    {{ form_start(formComment) }}
+	        {# {{ form_row(formComment.pseudo, {'attr': {'class': 'form-control'}, 'label': "Pseudo"})}} #}
+	        {{ form_row(formComment.commentaire, { 'attr': {'rows': 15}, 'attr': {'class': 'form-control'}, 'label': "Saisir votre commentaire" })}}
+	        <button type="submit" class="btn btn-dark m-2">Poster le commentaire</button>
+	    {{ form_end(formComment) }}
+    {% else %}
+        <span>Vous devez être connecté à votre compte pour laisser un commentaire.</span>
+	{% endif %}  
+
+
+
+	<h4 class="my-4">Commentaires de nos membres...</h4>
+
+	<div class="row mb-7">
+
+		{% for data in lieu.comments %}
+
+			<div class="col-md-4 border py-4">
+				<div class="text-center">
+					<span class="col-12"><b>{{ data.pseudo }}</b></span><br>
+					<small class="font-italic text-center">( Posté le {{ data.createdAt|date('d/m/Y')}} à {{ data.createdAt|date('H:i:s') }})</small>
+				</div>
+			</div>
+			<div class="col-md-8 border py-3">
+				{{ data.commentaire|striptags }}
+			</div>
+
+		{% endfor %}
+
+	</div>
+	
+	
+    </div>
+
+</div>	
+
+{% endblock %}
+
+

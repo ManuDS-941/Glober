@@ -15,7 +15,7 @@
             {# Lien vers fichier CSS #} {# asset(): fonction TWIG qui permet de générer une URL jusqu'au fichier style.css #}
             <link rel="stylesheet" href="{{ asset('css/styleind.css')}}">
             <link rel="stylesheet" href="{{ asset('css/stylefr.css')}}">
-            <link rel="stylesheet" href="{{ asset('css/stylees.css')}}">
+            <link rel="stylesheet" href="{{ asset('css/stylept.css')}}">
             <link rel="stylesheet" href="{{ asset('css/styleaccueil.css')}}">
             <link rel="stylesheet" href="{{ asset('css/stylecontact.css')}}">
 
@@ -55,6 +55,17 @@
                 </div>
         </nav>
 
+        <div class="loader">
+            <div class="earth">
+                <img src="../image/earth.png">
+            </div>
+        
+            <div class="plane">
+                <h1>&#9992</h1>
+            </div>
+        
+            <p class="loading">Loading...</p>
+        </div>
 
         {% block body %}
         
@@ -74,6 +85,8 @@
             </div>
 
         </footer> #}
+
+        
 
 
         {% block javascripts %}

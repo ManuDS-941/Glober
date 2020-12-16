@@ -14,6 +14,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *      fields = {"username"},
  *      message="Ce nom d'utilisateur est déjà existant, veuillez en saisir un nouveau !"
  * )
+ * @UniqueEntity(
+ *      fields = {"email"},
+ *      message="Cet email est déjà existant, veuillez en saisir un nouveau !"
+ * )
  */
 class User implements UserInterface
 {
@@ -25,18 +29,28 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\NotBlank(message="Veuillez renseigner un Email")
+     * @Assert\Email(message="Veuillez saisir une adresse Email valide")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min="2",
+     *      minMessage="Votre mon d'utilisateur doit contenir minimum 2 caratères"
+     * )
+     * @Assert\NotBlank(message="Veuillez renseigner un nom d'utilisateur")
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * 
+     * @Assert\Length(
+     *      min="6",
+     *      minMessage="Votre mot de passe doit faire minimum 6 caratères"
+     * )
      * @Assert\EqualTo(
      *      propertyPath="confirm_password",
      *      message="Les mots de passe ne correspondent pas",
