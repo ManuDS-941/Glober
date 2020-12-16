@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez notre incroyable équipe !{% endblock %}
+
+{% block body %}
+<br>
+<section class="page-section bg-light" id="team">
+            <div class="container">
+            {% for message in app.flashes('success') %}
+                <div class="bg-success text-white text-center col-md-4 mx-auto rounded p-3 mb-3">{{message}}</div>
+            {% endfor %}
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Notre suberbe équipe</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <img class="rounded-circle" src="../image/contact/manu.png" alt="" />
+                            <h4>Emmanuel Dasilve</h4>
+                            <p class="text-muted">Lead Designer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <img class="rounded-circle" src="./image/contact/salaheddine.jpg" alt="" />
+                            <h4>Salaheddine HZ</h4>
+                            <p class="text-muted">Lead Marketer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="" />
+                            <h4>Catherine DOUCET</h4>
+                            <p class="text-muted">Lead Developer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="" />
+                            <h4>David VERON</h4>
+                            <p class="text-muted">Lead Developer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Vous pouvez nous contactez en utilisant le formulaire en dessous pour toutes demandes, suggestions ou propositions de collaboration</p></div>
+                </div>
+            </div>
+        </section>
+        <!-- Clients-->
+        <div class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/envato.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/designmodo.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/themeforest.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/creative-market.jpg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Conctactez-nous</h2>
+                    <h3 class="section-subheading text-muted">Nous serons ravis de répondre à toutes vos questions.</h3>
+                </div>
+                {# <form method="post" id="contactForm" name="sentMessage" novalidate="novalidate">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="nom" name="nom" type="text" placeholder="Votre Nom *" required="required" data-validation-required-message="Veuillez entrer votre nom." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="prenom" name="prenom" type="prenom" placeholder="Votre Prénom *" required="required" data-validation-required-message="Veuillez entrer votre prénom." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <input class="form-control" id="email" name="email" type="email" placeholder="Votre Email *" required="required" data-validation-required-message="Veuillez entrer votre email." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea class="form-control" id="message" name="message" placeholder="Votre Message *" required="required" data-validation-required-message="Veuillez écrire votre message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div id="success"></div>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">envoyer un message</button>
+                    </div>
+                </form> #}
+
+                {{ form_start(formMessage) }}
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            {{ form_row(formMessage.nom, {'label': false}) }}
+
+                            {{ form_row(formMessage.prenom, {'label': false}) }}
+
+                            {{ form_row(formMessage.email,{'label': false} ) }}
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ form_row(formMessage.message, {'attr': {'rows': 6, 'class': '', }, 'label': false}) }}
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-dark">Envoyer</button>
+
+                {{ form_end(formMessage) }}
+            </div>
+        </section>
+        
+
+
+{% endblock %}

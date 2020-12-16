@@ -29,8 +29,8 @@ function initialize() {
   var marker4 = WE.marker([20.595164, 78.963606]).addTo(earth);
   marker4.bindPopup("<b>Welcome to  </b><a href='/ind'>India</a>", {maxWidth: 120, closeButton: true});
 
-  var marker4 = WE.marker([19.432608, -99.133208]).addTo(earth);
-  marker4.bindPopup("<b>Bienvenido en  </b><a href='/mx'>Mexico</a>", {maxWidth: 120, closeButton: true});
+  var marker5 = WE.marker([19.432608, -99.133208]).addTo(earth);
+  marker5.bindPopup("<b>Bienvenido en  </b><a href='/mx'>Mexico</a>", {maxWidth: 120, closeButton: true});
 
   var markerCustom = WE.marker([50, -9], '/img/logo-webglearth-white-100.png', 100, 24).addTo(earth);
 
