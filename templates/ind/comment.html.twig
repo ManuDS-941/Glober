@@ -18,7 +18,7 @@
 		{% endfor %} 
 	</h1>
 
- <button type="button" class="btn btn-secondary"><a href="{{ path('ind') }}" style="text-decoration: none; color: white;">Back To India</a></button> 
+ {# <button type="button" class="btn btn-secondary"><a href="{{ path('pondy') }}" style="text-decoration: none; color: white;">Back To India</a></button>  #}
 
    
 
@@ -40,10 +40,10 @@
 					Adresse : {{ data.adresse }}
 
 				</small>
-					Description :
+					{# Description :
 				<small>
 					
-				</small>
+				</small> #}
 			</div>
 		</div> 
 		{% endif %}
@@ -66,6 +66,9 @@
 
             <h4 class="mt-5 mb-3">Donner votre avis...</h4>
 
+
+			 {% if is_granted('ROLE_ADMIN')  %}
+
             {# Affichage du formulaire d'ajout de commentaire envoyé par le controller BlogController #}
             {{ form_start(formComment) }}
 
@@ -76,12 +79,12 @@
                 <button type="submit" class="btn btn-dark">Poster le commentaire</button>
 
             {{ form_end(formComment) }}
-
+ {% endif  %}
 	
 
 
 
-	<h4 class="my-4">Vos r�actions...</h4>
+	<h4 class="my-4">Vos reactions...</h4>
 
 
 		<div class="row mb-5">
@@ -91,7 +94,7 @@
 				<div class="col-md-4 border p-2">
 					<div class="text-center">
 						<span class="col-12">{{ data.pseudo }}</span><br>
-						<small class="font-italic">( Post� le {{ data.createdAt|date('d/m/Y')}} � {{ data.createdAt|date('H:i:s') }})</small>
+						<small class="font-italic">( Poste le {{ data.createdAt|date('d/m/Y')}}   {{ data.createdAt|date('H:i:s') }})</small>
 					</div>
 				</div>
 

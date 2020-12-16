@@ -92,7 +92,7 @@ class FrController extends AbstractController
         $comment = new Comment;
         // dump($comment);
 
-        $formComment = $this->createForm(CommentType::class, $comment);   // importation du formulaire d'ajout de commentaire relié à l'entité $comment
+        $formComment = $this->createForm(CommentaireType::class, $comment);   // importation du formulaire d'ajout de commentaire relié à l'entité $comment
         dump($formComment);
         
         $formComment->handleRequest($request);   // on rempli l'objet (entité) $comment avec les données saisies dans le formulaire

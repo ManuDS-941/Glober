@@ -8,6 +8,7 @@ use App\Entity\Ville;
 use App\Entity\Comment;
 use App\Entity\Category;
 use App\Form\CommentType;
+use App\Form\CommentaireType;
 use App\Repository\LieuRepository;
 use App\Repository\PaysRepository;
 use App\Repository\VilleRepository;
@@ -87,7 +88,7 @@ class IndController extends AbstractController
         
         $comment = new Comment;
         
-        $formComment = $this->createForm(CommentType::class, $comment); // Cr�er un formulaire et on stock dans la variable $comment
+        $formComment = $this->createForm(CommentaireType::class, $comment); // Cr�er un formulaire et on stock dans la variable $comment
         
         //dump($formComment);
         dump($request);

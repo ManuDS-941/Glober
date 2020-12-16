@@ -1,122 +1,143 @@
-{% extends 'base.html.twig' %}
+  {% extends 'base.html.twig' %}
 
-{% block title %}Hello India!{% endblock %}
+  {% block title %}Hello India!{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+  {% block body %}
+  <style>
+      .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+      .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+  </style>
 
-    <div class="top">
- 
-    
- <div class="h"><h1 class=" head"><span class="orange">Incre</span>dible <span class="green">!ndia</span></h1></div> 
+      <div class="top">
   
       
-      </div>
+  <div class="h"><h1 class=" head"><span class="orange">Incre</span>dible <span class="green">!ndia</span></h1></div> 
+    
+        
+        </div>
 
-          <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navb">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navb">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Choisir une ville
-                    </a>
-                    
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                       
-                         {% for data in ville %}
-                        <a class="dropdown-item" href="{{ path('pondy', {'id': data.id }) }}"> {{ data.title }} </a>
-                        {% endfor %}
-                       
-                    </div>
-                {# </li>
-                <div class="h"><h1 class="inc"><span class="orange">Incre</span>dible <span class="green">!ndia</span></h1></div>
-            </ul> #}
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Choisir une ville
+                      </a>
+                      
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        
+                          {% for data in ville %}
+                          <a class="dropdown-item" href="{{ path('pondy', {'id': data.id }) }}"> {{ data.title }} </a>
+                          {% endfor %}
+                        
+                      </div>
+                  {# </li>
+                  <div class="h"><h1 class="inc"><span class="orange">Incre</span>dible <span class="green">!ndia</span></h1></div>
+              </ul> #}
+              
+          </div>
+      </nav>
+      
+  <div class="taj">
+
+   <div id="carouselExampleIndicators" class="carousel slide" data-interval="4000" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="../image/ind/taj.jpeg" style="height: 900px;">
+                    <rect width="100%" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./image/ind/pondy.jpg" style="height: 900px;">
+                    <rect width="100%" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./image/ind/indgate.jpg" style="height: 900px;">
+                    <rect width="100%" alt="Third slide">
+                </div>
+            </div>
             
         </div>
-    </nav>
-     
-<div class="taj">
-
- <img class="bd-placeholder-img" width="100%" height="100%" src="../image/ind/taj.jpeg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
-
-</div>
-
- <div class="container marketing" id="contain">
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4">
-     
-       <img src="../image/ind/flag.svg" alt="" class="round">
-       
-        <h2>FLAG</h2>
-        <p>The National flag of India is a horizontal tricolor of deep saffron (kesari) at the top, white in the middle and dark green at the bottom in equal proportion. The ratio of width of the flag to its length is two to three. In the centre of the white band is a navy blue wheel which represents the chakra.</p>
-        
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-       <img src="../image/ind/tiger.jpg" alt="" class="round">
-        <h2>NATIONAL ANIMAL</h2>
-        <p>The magnificent tiger, Panthera tigris is a striped animal. It has a thick yellow coat of fur with dark stripes. The combination of grace, strength, agility and enormous power has earned the tiger its pride of place as the national animal of India.</p>
-        
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img src="../image/ind/peacock.webp" alt="" class="round">
-        <h2>NATIONAL BIRD</h2>
-        <p>The Indian peacock, Pavo cristatus, the National Bird of India, is a colourful, swan-sized bird, with a fan-shaped crest of feathers, a white patch under the eye and a long, slender neck.</p>
-       
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider" id="contain">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">HISTORY</h2>
-        <p class="lead">India (Hindi: Bhārat), officially the Republic of India (Hindi: Bhārat Gaṇarājya),[23] is a country in South Asia. It is the second-most populous country, the seventh-largest country by land area, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west;[f] China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives; its Andaman and Nicobar Islands share a maritime border with Thailand and Indonesia.</p>
-      </div>
-      <div class="col-md-5">
-       <img src="../image/ind/history.jpeg" alt="" >
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-       <img src="../image/ind/culture.jpg" alt="" >
-        </div>
-      <div class="col-md-5">
-      <h2 class="featurette-heading">CULTURE</h2>
-        <p class="lead">Indian culture is the heritage of social norms, ethical values, traditional customs, belief systems, political systems, artifacts and technologies that originated in or are associated with the Indian subcontinent. The term also applies beyond India to countries and cultures whose histories are strongly connected to India by immigration, colonization, or influence, particularly in South Asia and Southeast Asia. India's languages, religions, dance, music, architecture, food and customs differ from place to place within the country.</p>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">FOOD</h2>
-        <p class="lead">Many Indian dishes are cooked in vegetable oil, but peanut oil is popular in northern and western India, mustard oil in eastern India, and coconut oil along the western coast, especially in Kerala and parts of southern Tamil Nadu. Gingelly (sesame) oil is common in the south since it imparts a fragrant, nutty aroma. In recent decades, sunflower, safflower, cottonseed, and soybean oils have become popular across India. Hydrogenated vegetable oil, known as Vanaspati ghee, is another popular cooking medium. Butter-based ghee, or deshi ghee, is used frequently, though less than in the past.[citation needed] Many types of meat are used for Indian cooking, but chicken and mutton tend to be the most commonly consumed meats. Fish and beef consumption are prevalent in some parts of India, but they are not widely consumed except for coastal areas, as well as the north east.[</p>
-      </div>
-      <div class="col-md-5">
-         <img src="../image/ind/food.jpg" alt="" >
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
   </div>
 
-{% endblock %}
+  <div class="container marketing" id="contain">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+      
+        <img src="../image/ind/flag.svg" alt="" class="round">
+        
+          <h2>FLAG</h2>
+          <p>The National flag of India is a horizontal tricolor of deep saffron (kesari) at the top, white in the middle and dark green at the bottom in equal proportion. The ratio of width of the flag to its length is two to three. In the centre of the white band is a navy blue wheel which represents the chakra.</p>
+          
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+        <img src="../image/ind/tiger.jpg" alt="" class="round">
+          <h2>NATIONAL ANIMAL</h2>
+          <p>The magnificent tiger, Panthera tigris is a striped animal. It has a thick yellow coat of fur with dark stripes. The combination of grace, strength, agility and enormous power has earned the tiger its pride of place as the national animal of India.</p>
+          
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../image/ind/peacock.webp" alt="" class="round">
+          <h2>NATIONAL BIRD</h2>
+          <p>The Indian peacock, Pavo cristatus, the National Bird of India, is a colourful, swan-sized bird, with a fan-shaped crest of feathers, a white patch under the eye and a long, slender neck.</p>
+        
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider" id="contain">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">HISTORY</h2>
+          <p class="lead">India (Hindi: Bhārat), officially the Republic of India (Hindi: Bhārat Gaṇarājya),[23] is a country in South Asia. It is the second-most populous country, the seventh-largest country by land area, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west;[f] China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives; its Andaman and Nicobar Islands share a maritime border with Thailand and Indonesia.</p>
+        </div>
+        <div class="col-md-5">
+        <img src="../image/ind/history.jpeg" alt="" >
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+        <img src="../image/ind/culture.jpg" alt="" >
+          </div>
+        <div class="col-md-5">
+        <h2 class="featurette-heading">CULTURE</h2>
+          <p class="lead">Indian culture is the heritage of social norms, ethical values, traditional customs, belief systems, political systems, artifacts and technologies that originated in or are associated with the Indian subcontinent. The term also applies beyond India to countries and cultures whose histories are strongly connected to India by immigration, colonization, or influence, particularly in South Asia and Southeast Asia. India's languages, religions, dance, music, architecture, food and customs differ from place to place within the country.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">FOOD</h2>
+          <p class="lead">Many Indian dishes are cooked in vegetable oil, but peanut oil is popular in northern and western India, mustard oil in eastern India, and coconut oil along the western coast, especially in Kerala and parts of southern Tamil Nadu. Gingelly (sesame) oil is common in the south since it imparts a fragrant, nutty aroma. In recent decades, sunflower, safflower, cottonseed, and soybean oils have become popular across India. Hydrogenated vegetable oil, known as Vanaspati ghee, is another popular cooking medium. Butter-based ghee, or deshi ghee, is used frequently, though less than in the past.[citation needed] Many types of meat are used for Indian cooking, but chicken and mutton tend to be the most commonly consumed meats. Fish and beef consumption are prevalent in some parts of India, but they are not widely consumed except for coastal areas, as well as the north east.[</p>
+        </div>
+        <div class="col-md-5">
+          <img src="../image/ind/food.jpg" alt="" >
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+    </div>
+    
+
+  {% endblock %}
