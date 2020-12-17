@@ -19,7 +19,7 @@ nav {
     font-family: Poppins;
     font-weight: 400;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 
 }
 
@@ -238,6 +238,7 @@ body{
     min-height: 100vh;
     background-image: linear-gradient(to top, #ffffff, #eef1fb, #d5e5f6, #b7dbee, #96d1e0, #96d1e0, #96d1e0, #96d1e0, #b7dbee, #d5e5f6, #eef1fb, #ffffff);
 }
+
 
 
 
