@@ -10,6 +10,7 @@ use App\Form\LieuType;
 use App\Form\PaysType;
 use App\Form\UserType;
 use App\Entity\Comment;
+use App\Entity\Message;
 use App\Form\VilleType;
 use App\Entity\Category;
 use App\Form\CommentType;
@@ -19,6 +20,7 @@ use App\Repository\PaysRepository;
 use App\Repository\UserRepository;
 use App\Repository\VilleRepository;
 use App\Repository\CommentRepository;
+use App\Repository\MessageRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -465,6 +467,8 @@ class AdminController extends AbstractController
         return $this->redirectToRoute('admin_comment');
     }
 
+
+
     /**
      * @Route("/admin/user", name="admin_user")
      */
@@ -542,4 +546,42 @@ class AdminController extends AbstractController
 
         return $this->redirectToRoute('admin_user');
     }
+
+
+
+    /**
+     * @Route("/admin/message", name="admin_message")
+     */
+    public function AdminMessage(EntityManagerInterface $manager, MessageRepository $repo): Response
+    // EntityManagerInterface $manager : Agit sur la BDD et stock dans manager
+    // MessageRepository $repo : Selectionne dans la BDD
+    {
+        $tableau = $manager->getClassMetadata(Message::class)->getFieldNames(); // Selectionne les métas données des messages dans la Bdd 
+
+        dump($tableau);
+        
+        $message = $repo->findAll(); // Selectionne les messages contacts de la BDD
+
+        dump($message);
+
+        return $this->render('admin/admin_message.html.twig', [
+            'tableau' => $tableau,
+            'message' => $message
+        ]);
+    }
+
+    /**
+     * @Route("/admin/message/delete/{id}", name="admin_message_delete")
+     */
+    public function AdminDeleteMessage(Message $message, EntityManagerInterface $manager)
+    {
+        $manager->remove($message); // Prépare pour garder en mémoire la requete Delete
+        $manager->flush(); // Execute
+
+        $this->addFlash('success', "Le message a bien été supprimé");
+
+        return $this->redirectToRoute('admin_message');
+    }
+
+
 }
