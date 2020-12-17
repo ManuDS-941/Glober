@@ -24,7 +24,7 @@
 	</h1>
 
 <div class="container">
-    <div class="col-md-12">
+    <div class="col-md-12 pb-4">
 
 {% for data in lieu2 %}
 	
@@ -57,7 +57,7 @@
 	    	</div>
 	    {% endfor %}
 
-	    <!-- Affichage du formulaire d'ajout de commentaire envoyé par le controller FrController  -->
+	    <!-- Affichage du formulaire d'ajout de commentaire envoyé par le controller PtController  -->
 	    {{ form_start(formComment) }}
 	        {# {{ form_row(formComment.pseudo, {'attr': {'class': 'form-control'}, 'label': "Pseudo"})}} #}
 	        {{ form_row(formComment.commentaire, { 'attr': {'rows': 15}, 'attr': {'class': 'form-control'}, 'label': "Saisir votre commentaire" })}}
