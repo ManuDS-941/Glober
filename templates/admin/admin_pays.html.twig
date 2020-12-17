@@ -26,6 +26,7 @@
                 
                 {% endfor %}
                 
+                <th class="align-middle">NB DE VILLES</th>
                 <th>EDITER</th>
                 <th>SUPPRIMER</th>
 
@@ -35,6 +36,7 @@
                 <tr>
                     <td class="align-middle"> {{ data.id }} </td>
                     <td class="align-middle"> {{ data.title }} </td>
+                    <td class="align-middle"> {{ data.villes|length }} </td>
 
                     <td class="align-middle"><a href=" {{ path('admin_pays_edit', {'id': data.id}) }} " class="btn btn-success text-white"><i class="fas fa-edit fa-1x"></i></a></td>
                     <td class="align-middle"><a href=" {{ path('admin_pays_delete', {'id': data.id}) }}" class="btn btn-danger text-white" onclick="return(confirm('Voulez vous vraiment supprimer cet ville ?'))"><i class="fas fa-trash fa-1x"></i></a></td>

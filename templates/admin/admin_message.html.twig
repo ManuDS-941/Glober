@@ -15,7 +15,7 @@
     
         {% endfor %}
 
-        {# <a class="float-right btn btn-dark mb-4" href=" {{ path('admin_comment_create') }} ">Ajouter</a> #}
+        {# <a class="float-right btn btn-dark mb-4" href=" {{ path('admin_message_create') }} ">Ajouter</a> #}
         
         <table class="table table-striped table bordered table-dark table-hover text-center">
             
@@ -27,23 +27,24 @@
                 {% endfor %}
 
                 
-                {# <th>EDITER</th>
-                <th>SUPPRIMER</th> #}
+                {# <th>EDITER</th> #}
+                <th>SUPPRIMER</th>
 
             </tr>
 
             {% for data in message %}
                 <tr>
-                    {# <td class="align-middle">   {{ data.id }} </td>
+                    <td class="align-middle"> {{ data.id }} </td>
                     <td class="align-middle"> {{ data.nom }} </td>
                     <td class="align-middle"> {{ data.prenom }} </td>
                     <td class="align-middle"> {{ data.email }} </td>
                     <td class="align-middle"> {{ data.message }} </td>
-                    <td class="align-middle">{{ data.createdAt|date('d/m/Y') }} à {{ data.createdAt|date('H:i:s') }}</td> #}
+                    <td class="align-middle"> {{ data.createdAt|date('d/m/Y') }} à {{ data.createdAt|date('H:i:s') }}</td>
 
-                    {# <td class="align-middle"><a href="{{ path('admin_comment_edit', {'id': data.id }) }}" class="btn btn-success text-white"><i class="fas fa-edit fa-1x"></i></a></td>
-                    <td class="align-middle"><a href="{{ path('admin_comment_delete', {'id': data.id }) }}" class="btn btn-danger text-white" onclick="return(confirm('Voulez vous vraiment supprimer ce commentaire ?'))"><i class="fas fa-trash fa-1x"></i></a></td> #}
+                    {# <td class="align-middle"><a href="{{ path('admin_message_edit', {'id': data.id }) }}" class="btn btn-success text-white"><i class="fas fa-edit fa-1x"></i></a></td> #}
+                    <td class="align-middle"><a href="{{ path('admin_message_delete', {'id': data.id }) }}" class="btn btn-danger text-white" onclick="return(confirm('Voulez vous vraiment supprimer ce message ?'))"><i class="fas fa-trash fa-1x"></i></a></td>
                 </tr>
+                <br>
             {% endfor %}
             
         </table>

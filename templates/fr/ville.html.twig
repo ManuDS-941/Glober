@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-
+{% block title %}Ville de France{% endblock %}
 
 {% block body %}
 
@@ -20,11 +20,11 @@
                 {% endfor %} </h1>
     </div>
 
-    <div class="text-center my-4">
-        {% for data in cat %}    {# selectionne et affiche category.lieus #}
+    {# <div class="text-center my-4">
+        {% for data in cat %}    {# selectionne et affiche category.lieus # }
             <button type="button" class="btn btn-primary text-center my-4"> {{ data.title }} </button>
         {% endfor %}
-    </div> 
+    </div>  #}
 
 
 <div class="container">
@@ -56,9 +56,9 @@
             {% if data.ville.id == id %}
 
 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3">
 
-                    <div class="card mt-5">
+                    <div class="card mt-3">
                         <h5 class="text-center">{{ data.category.title }}</h5>
                         <img class="card-img-top" src="/image/{{ data.image }}" alt="Card image cap" style="height: 250px;">
                         <div class="card-body">
