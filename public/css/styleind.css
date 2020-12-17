@@ -26,15 +26,16 @@
 {
     color: green;
 }
-.carousel-inner
+ .carousel-inner
 {
-  height: 100vh;
+  height: 50vh;
 
-}
-#ig
+} 
+ #ig
 {
-  height: 100vh;
-}
+  height: 50vh;
+  
+} 
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
