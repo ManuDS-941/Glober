@@ -26,14 +26,15 @@
 {
     color: green;
 }
-/* .taj
+.carousel-inner
 {
-    background-image: url(../image/ind/taj.jpeg);
-   background-size: cover;
-   height: 100vh;
-   background-repeat: no-repeat;
-   
-} */
+  height: 100vh;
+
+}
+#ig
+{
+  height: 100vh;
+}
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;

@@ -1,13 +1,13 @@
 {% extends "base.html.twig" %}
 
 {% block title %} 
-    <p>
+    
 	    {% for data in lieu2 %}
 	    	{% if data.id == id %} 
 	    		{{ data.title }}
 	    	{% endif %}
 	    {% endfor %}  
-    </p>
+    
 {% endblock %}
 
 

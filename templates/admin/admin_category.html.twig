@@ -27,6 +27,7 @@
                 {% endfor %}
                 
                 <th>VILLE</th>
+                <th class="align-middle">NB DE LIEUX</th>
                 <th>EDITER</th>
                 <th>SUPPRIMER</th>
 
@@ -37,6 +38,7 @@
                     <td class="align-middle"> {{ data.id }} </td>
                     <td class="align-middle"> {{ data.title }} </td>
                     <td class="align-middle"> {{ data.ville.title }}</td>
+                    <td class="align-middle"> {{ data.lieus|length }} </td>
 
                     <td class="align-middle"><a href=" {{ path('admin_category_edit', {'id': data.id}) }} " class="btn btn-success text-white"><i class="fas fa-edit fa-1x"></i></a></td>
                     <td class="align-middle"><a href=" {{ path('admin_category_delete', {'id': data.id}) }} " class="btn btn-danger text-white" onclick="return(confirm('Voulez vous vraiment supprimer cet catégorie ?'))"><i class="fas fa-trash fa-1x"></i></a></td>

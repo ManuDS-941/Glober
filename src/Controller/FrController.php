@@ -62,7 +62,7 @@ class FrController extends AbstractController
         $lieu = $repo2->findAll();
 
         $cat = $repo1->findBy(['ville' => $id]);
-        dump($cat);
+        //dump($cat);
 
         // dump($id); // // Verifie l'Id reçu
         // dump($ville); // Verifie le tableau des villes
@@ -86,14 +86,14 @@ class FrController extends AbstractController
     {
         // dump($id);
         $lieu2 = $repo->findAll();
-        dump($lieu2);
+        //dump($lieu2);
 
 
         $comment = new Comment;
         // dump($comment);
 
         $formComment = $this->createForm(CommentaireType::class, $comment);   // importation du formulaire d'ajout de commentaire relié à l'entité $comment
-        dump($formComment);
+        //dump($formComment);
         
         $formComment->handleRequest($request);   // on rempli l'objet (entité) $comment avec les données saisies dans le formulaire
         
@@ -103,7 +103,7 @@ class FrController extends AbstractController
             // getUser() : permettant de récupérer les données de l'utilisateur en session
             // On stock le nom d'utilisateur dans la variable ¤username
             $username = $this->getUser()->getUsername();
-            dump($username);
+            //dump($username);
         
             // On renseigne le setter de l'auteur afin qu'il soit automatiquement compris dans le commentaire
             $comment->setPseudo($username);
