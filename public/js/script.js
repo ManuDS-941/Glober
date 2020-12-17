@@ -8,7 +8,7 @@ function initialize() {
     attribution: '© OpenStreetMap contributors'
   }).addTo(earth);
 
-  //Start a simple rotation animation
+  //Animation de la rotation de la terre
   var before = null;
   requestAnimationFrame(function animate(now) {
       var c = earth.getPosition();
@@ -17,6 +17,8 @@ function initialize() {
       earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
       requestAnimationFrame(animate);
   });
+
+  // Géolocalisation des pays + lien menant aux pages respectives
   var marker = WE.marker([39.399872, -8.224454]).addTo(earth);
   marker.bindPopup("<b>Bem-vindo a  </b><a href='/pt'>Portugal</a>", {maxWidth: 150, closeButton: true})//.openPopup();
 
@@ -30,7 +32,16 @@ function initialize() {
   marker4.bindPopup("<b>Welcome to  </b><a href='/ind'>India</a>", {maxWidth: 120, closeButton: true});
 
   var marker5 = WE.marker([19.432608, -99.133208]).addTo(earth);
-  marker5.bindPopup("<b>Bienvenido en  </b><a href='/mx'>Mexico</a>", {maxWidth: 120, closeButton: true});
+  marker5.bindPopup("<b>Mexique bientôt disponible", {maxWidth: 120, closeButton: true});
+
+  var marker6 = WE.marker([31.791702, -7.092620]).addTo(earth);
+  marker6.bindPopup("<b>Maroc bientôt disponible", {maxWidth: 120, closeButton: true});
+
+  var marker7 = WE.marker([-14.235004, -51.92528]).addTo(earth);
+  marker7.bindPopup("<b>Brésil bientôt disponible", {maxWidth: 120, closeButton: true});
+
+  var marker8 = WE.marker([36.204824, 138.252924]).addTo(earth);
+  marker8.bindPopup("<b>Japon bientôt disponible", {maxWidth: 120, closeButton: true});
 
   var markerCustom = WE.marker([50, -9], '/img/logo-webglearth-white-100.png', 100, 24).addTo(earth);
 
